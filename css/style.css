@@ -16,6 +16,7 @@
   --color-primary-hover: #1565C0;
   --color-accent: #E3F2FD;
   --color-accent-text: #0D47A1;
+  --btn-primary-text: #FFFFFF;
   --text-primary: #212121;
   --text-secondary: #424242;
   --text-muted: #616161;
@@ -60,6 +61,7 @@
   --color-primary-hover: #64B5F6;
   --color-accent: #1A237E;
   --color-accent-text: #BBDEFB;
+  --btn-primary-text: #0D1117;
   --text-primary: #FAFAFA;
   --text-secondary: #E0E0E0;
   --text-muted: #9E9E9E;
@@ -278,13 +280,13 @@ button {
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: #FFFFFF;
+  color: var(--btn-primary-text);
   box-shadow: 0 2px 6px rgba(25, 118, 210, 0.25);
 }
 
 .btn-primary:hover {
   background-color: var(--color-primary-hover);
-  color: #FFFFFF;
+  color: var(--btn-primary-text);
   box-shadow: 0 4px 12px rgba(25, 118, 210, 0.35);
   transform: translateY(-1px);
 }
@@ -478,7 +480,7 @@ button {
   display: inline-block;
   font-size: 0.85rem;
   font-weight: var(--font-bold);
-  color: var(--color-primary);
+  color: var(--color-accent-text);
   background-color: var(--color-accent);
   padding: 0.15rem 0.6rem;
   border-radius: var(--border-radius-full);
@@ -799,6 +801,18 @@ button {
   transform: translateY(0);
 }
 
+/* Vestibular accessibility: respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* --------------------------------------------------------------------------
    11. Footer
    -------------------------------------------------------------------------- */
@@ -821,6 +835,11 @@ button {
    12. Responsive Breakpoints (< 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
   .nav-toggle {
     display: inline-flex;
   }
@@ -873,9 +892,29 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   13. Print Stylesheet (Clean 1-column PDF Export)
+   13. Print Stylesheet (Clean 1-column A4 PDF Export)
    -------------------------------------------------------------------------- */
+@page {
+  size: A4 portrait;
+  margin: 12mm 15mm;
+}
+
 @media print {
+  /* Override custom properties so Dark Mode doesn't print white-on-white text */
+  :root,
+  [data-theme="dark"] {
+    --bg-body: #FFFFFF;
+    --bg-surface: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --text-primary: #000000;
+    --text-secondary: #222222;
+    --text-muted: #555555;
+    --color-primary: #000000;
+    --color-accent-text: #000000;
+    --border-color: #CCCCCC;
+    --border-color-subtle: #E0E0E0;
+  }
+
   body {
     background-color: #FFFFFF;
     color: #000000;
@@ -905,10 +944,23 @@ button {
   .cv-section-title {
     border-bottom: 1px solid #000000;
     color: #000000;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .cv-item-sub {
     color: #333333;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   a {

@@ -12,10 +12,29 @@
   const STORAGE_KEY = 'pnh_theme';
 
   /* ------------------------------------------------------------------------
+   * 0. Safe Storage Utilities (Exception-proof for Private Browsing / Iframes)
+   * ------------------------------------------------------------------------ */
+  function safeGetStorage(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function safeSetStorage(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      // Storage blocked or quota exceeded; proceed in-memory gracefully
+    }
+  }
+
+  /* ------------------------------------------------------------------------
    * 1. Theme Controller
    * ------------------------------------------------------------------------ */
   function getPreferredTheme() {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = safeGetStorage(STORAGE_KEY);
     if (saved === 'dark' || saved === 'light') {
       return saved;
     }
@@ -28,20 +47,23 @@
   function applyTheme(theme) {
     const root = document.documentElement;
     const toggleBtn = document.getElementById('theme-toggle');
+    const isEnglish = (root.getAttribute('lang') || '').toLowerCase().startsWith('en');
 
     if (theme === 'dark') {
       root.setAttribute('data-theme', 'dark');
       if (toggleBtn) {
         toggleBtn.innerHTML = '☀️';
-        toggleBtn.setAttribute('aria-label', 'Chuyển sang giao diện sáng (Light Mode)');
-        toggleBtn.setAttribute('title', 'Chuyển sang giao diện sáng');
+        const label = isEnglish ? 'Switch to Light Mode' : 'Chuyển sang giao diện sáng (Light Mode)';
+        toggleBtn.setAttribute('aria-label', label);
+        toggleBtn.setAttribute('title', label);
       }
     } else {
       root.removeAttribute('data-theme');
       if (toggleBtn) {
         toggleBtn.innerHTML = '🌙';
-        toggleBtn.setAttribute('aria-label', 'Chuyển sang giao diện tối (Dark Mode)');
-        toggleBtn.setAttribute('title', 'Chuyển sang giao diện tối');
+        const label = isEnglish ? 'Switch to Dark Mode' : 'Chuyển sang giao diện tối (Dark Mode)';
+        toggleBtn.setAttribute('aria-label', label);
+        toggleBtn.setAttribute('title', label);
       }
     }
   }
@@ -49,7 +71,7 @@
   function toggleTheme() {
     const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     const next = current === 'dark' ? 'light' : 'dark';
-    localStorage.setItem(STORAGE_KEY, next);
+    safeSetStorage(STORAGE_KEY, next);
     applyTheme(next);
   }
 
@@ -66,7 +88,7 @@
     // Listen for OS scheme changes if user hasn't set manual preference
     if (window.matchMedia) {
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-        if (!localStorage.getItem(STORAGE_KEY)) {
+        if (!safeGetStorage(STORAGE_KEY)) {
           applyTheme(e.matches ? 'dark' : 'light');
         }
       });
@@ -131,6 +153,16 @@
           navToggle.setAttribute('aria-expanded', 'false');
           navToggle.innerHTML = '☰';
         }
+      }
+    });
+
+    // Close menu with Escape key (Keyboard accessibility)
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
+        navLinks.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '☰';
+        navToggle.focus();
       }
     });
 
