@@ -1,5 +1,6 @@
 param()
-$target = "about-me/assets/favicon.svg"
+$baseDir = if (Test-Path "about-me/assets/favicon.svg") { "about-me" } else { (Resolve-Path "$PSScriptRoot/..").Path }
+$target = Join-Path $baseDir "assets/favicon.svg"
 if (-not (Test-Path $target)) {
     Write-Error "FAIL: $target does not exist"
     exit 1

@@ -4,6 +4,8 @@
  * - Scroll Reveal via IntersectionObserver
  * - Active Navigation Link Highlighter
  * - Mobile Navigation Drawer Toggle
+ * - Configuration Link Binder (Reads window.SITE_CONFIG from config.js)
+ * - CV Language Tab Controller (Tiếng Việt <-> English with sync to Drive links)
  */
 
 (function () {
@@ -76,7 +78,6 @@
   }
 
   function initTheme() {
-    // Apply immediate preferred theme
     const theme = getPreferredTheme();
     applyTheme(theme);
 
@@ -85,7 +86,6 @@
       toggleBtn.addEventListener('click', toggleTheme);
     }
 
-    // Listen for OS scheme changes if user hasn't set manual preference
     if (window.matchMedia) {
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
         if (!safeGetStorage(STORAGE_KEY)) {
@@ -122,7 +122,6 @@
         observer.observe(el);
       });
     } else {
-      // Fallback for older browsers: show elements immediately
       revealElements.forEach(function (el) {
         el.classList.add('is-visible');
       });
@@ -156,7 +155,7 @@
       }
     });
 
-    // Close menu with Escape key (Keyboard accessibility)
+    // Close menu with Escape key
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
         navLinks.classList.remove('is-open');
@@ -166,7 +165,7 @@
       }
     });
 
-    // Close menu when a link is clicked
+    // Close menu when clicking any link
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         if (navLinks.classList.contains('is-open')) {
@@ -188,9 +187,8 @@
     navLinks.forEach(function (link) {
       const href = link.getAttribute('href');
       if (!href) return;
-      const targetPage = href.split('/').pop() || 'index.html';
+      const targetPage = href.split('/').pop().split('#')[0] || 'index.html';
 
-      // Match exact page or default index
       const isIndexMatch = (currentPath === '' || currentPath === 'index.html') && (targetPage === 'index.html' || targetPage === './');
       if (currentPath === targetPage || isIndexMatch) {
         link.classList.add('active');
@@ -203,13 +201,142 @@
   }
 
   /* ------------------------------------------------------------------------
-   * 5. Bootstrap on DOM Ready
+   * 5. Configuration Link Binder (Site Config from config.js)
+   * ------------------------------------------------------------------------ */
+  function updateCvDriveButton(lang) {
+    const config = window.SITE_CONFIG || {};
+    const driveCvBtn = document.getElementById('drive-cv-btn');
+    if (!driveCvBtn) return;
+
+    if (lang === 'en') {
+      const url = config.driveCvEnUrl || config.driveCvUrl || '';
+      driveCvBtn.setAttribute('href', url.trim() !== '' ? url : '#');
+      driveCvBtn.innerHTML = '📄 View English CV (Drive)';
+      driveCvBtn.setAttribute('title', 'Open English CV on Google Drive');
+    } else {
+      const url = config.driveCvViUrl || config.driveCvUrl || '';
+      driveCvBtn.setAttribute('href', url.trim() !== '' ? url : '#');
+      driveCvBtn.innerHTML = '📄 Xem CV Tiếng Việt (Drive)';
+      driveCvBtn.setAttribute('title', 'Mở file CV Tiếng Việt trên Google Drive');
+    }
+  }
+
+  function initConfigLinks() {
+    const config = window.SITE_CONFIG || {};
+
+    // Elements requesting specific config URLs via data-config attribute
+    const configElements = document.querySelectorAll('[data-config]');
+    configElements.forEach(function (el) {
+      const key = el.getAttribute('data-config');
+      if (key && config[key] && config[key].trim() !== '') {
+        el.setAttribute('href', config[key]);
+      }
+    });
+
+    // Handle Vietnamese CV buttons
+    const viButtons = document.querySelectorAll('.btn-drive-cv-vi');
+    viButtons.forEach(function (btn) {
+      const viUrl = config.driveCvViUrl || config.driveCvUrl || '';
+      if (viUrl.trim() !== '') {
+        btn.setAttribute('href', viUrl);
+      } else {
+        btn.addEventListener('click', function (e) {
+          if (!btn.getAttribute('href') || btn.getAttribute('href') === '#') {
+            e.preventDefault();
+            alert('Vui lòng gắn đường link Google Drive CV Tiếng Việt (driveCvViUrl) vào file config.js.');
+          }
+        });
+      }
+    });
+
+    // Handle English CV buttons
+    const enButtons = document.querySelectorAll('.btn-drive-cv-en');
+    enButtons.forEach(function (btn) {
+      const enUrl = config.driveCvEnUrl || config.driveCvUrl || '';
+      if (enUrl.trim() !== '') {
+        btn.setAttribute('href', enUrl);
+      } else {
+        btn.addEventListener('click', function (e) {
+          if (!btn.getAttribute('href') || btn.getAttribute('href') === '#') {
+            e.preventDefault();
+            alert('Vui lòng gắn đường link Google Drive CV Tiếng Anh (driveCvEnUrl) vào file config.js.');
+          }
+        });
+      }
+    });
+
+    // Initialize the dynamic Drive CV button on current active tab (default Vietnamese)
+    updateCvDriveButton('vi');
+
+    // General fallback for any remaining .btn-drive-cv
+    const genericDriveButtons = document.querySelectorAll('.btn-drive-cv');
+    genericDriveButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        const href = btn.getAttribute('href');
+        if (!href || href === '#' || href === '') {
+          e.preventDefault();
+          alert('Vui lòng gắn đường link Google Drive CV của bạn vào file config.js.');
+        }
+      });
+    });
+
+    // Handle Google Play Store download buttons
+    const playStoreButtons = document.querySelectorAll('.btn-playstore');
+    playStoreButtons.forEach(function (btn) {
+      if (config.playStoreUrl && config.playStoreUrl.trim() !== '') {
+        btn.setAttribute('href', config.playStoreUrl);
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+   * 6. CV Language Tabs Controller (Tiếng Việt <-> English)
+   * ------------------------------------------------------------------------ */
+  function initCvTabs() {
+    const tabButtons = document.querySelectorAll('.cv-tab-btn');
+    const tabPanels = document.querySelectorAll('.cv-tab-panel');
+
+    if (!tabButtons.length || !tabPanels.length) return;
+
+    tabButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const targetLang = btn.getAttribute('data-tab'); // 'vi' or 'en'
+        if (!targetLang) return;
+
+        // Update button states
+        tabButtons.forEach(function (b) {
+          const isActive = b === btn;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        // Update panel visibility
+        tabPanels.forEach(function (panel) {
+          const isMatch = panel.getAttribute('data-lang') === targetLang;
+          panel.classList.toggle('active', isMatch);
+          if (isMatch) {
+            panel.removeAttribute('hidden');
+          } else {
+            panel.setAttribute('hidden', '');
+          }
+        });
+
+        // Sync Google Drive button to active language
+        updateCvDriveButton(targetLang);
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+   * 7. Bootstrap on DOM Ready
    * ------------------------------------------------------------------------ */
   function onReady() {
     initTheme();
     initScrollReveal();
     initMobileNav();
     initActiveNav();
+    initConfigLinks();
+    initCvTabs();
   }
 
   if (document.readyState === 'loading') {

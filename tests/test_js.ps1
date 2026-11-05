@@ -1,5 +1,6 @@
 param()
-$target = "about-me/js/main.js"
+$baseDir = if (Test-Path "about-me/js/main.js") { "about-me" } else { (Resolve-Path "$PSScriptRoot/..").Path }
+$target = Join-Path $baseDir "js/main.js"
 if (-not (Test-Path $target)) {
     Write-Error "FAIL: $target does not exist"
     exit 1
@@ -21,7 +22,10 @@ $requiredTokens = @(
     "reveal",
     "is-visible",
     "nav-toggle",
-    "is-open"
+    "is-open",
+    "SITE_CONFIG",
+    "initConfigLinks",
+    "initCvTabs"
 )
 
 foreach ($token in $requiredTokens) {

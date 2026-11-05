@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- EDITABLE: Thay đổi tiêu đề và mô tả SEO cho trang web của bạn -->
-  <title>Phạm Ngọc Huy — Mobile Developer Portfolio</title>
-  <meta name="description" content="Website cá nhân của Phạm Ngọc Huy — Kỹ sư Lập trình Di động (Flutter & React Native), T-Shaped Fullstack Developer.">
+  <title>Phạm Ngọc Huy — Mobile Developer Portfolio &amp; CV</title>
+  <meta name="description" content="Website cá nhân &amp; Hồ sơ năng lực của Phạm Ngọc Huy — Kỹ sư Lập trình Di động (Flutter &amp; React Native), T-Shaped Mobile Engineer.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   
   <!-- Google Fonts: Inter -->
@@ -25,7 +24,6 @@
     <div class="container nav-container">
       <a href="index.html" class="brand-link" aria-label="Trang chủ Phạm Ngọc Huy">
         <span class="brand-badge">PNH</span>
-        <!-- EDITABLE: Họ tên thương hiệu -->
         <span>Phạm Ngọc Huy</span>
       </a>
 
@@ -33,9 +31,7 @@
         <nav aria-label="Menu chính">
           <ul class="nav-links" id="nav-links">
             <li><a href="index.html" class="nav-link active">Trang chủ</a></li>
-            <li><a href="developer.html" class="nav-link">Developer & Apps</a></li>
-            <li><a href="cv-vi.html" class="nav-link">CV (Tiếng Việt)</a></li>
-            <li><a href="cv-en.html" class="nav-link">CV (English)</a></li>
+            <li><a href="developer.html" class="nav-link">Developer &amp; Apps</a></li>
           </ul>
         </nav>
 
@@ -60,22 +56,25 @@
       
       <!-- HERO SECTION -->
       <section class="hero-section reveal" aria-labelledby="hero-title">
-        <!-- EDITABLE: Avatar placeholder dạng tròn với initials PNH -->
         <div class="hero-avatar" aria-label="Avatar Phạm Ngọc Huy">PNH</div>
         
-        <!-- EDITABLE: Tên và chức danh chính -->
         <h1 id="hero-title" class="hero-title">Phạm Ngọc Huy</h1>
         <p class="hero-subtitle">Mobile Developer (Flutter &amp; React Native)</p>
         
-        <!-- EDITABLE: Đoạn giới thiệu ngắn 2-3 câu -->
         <p class="hero-bio">
           Chào bạn! Tôi là một Kỹ sư Lập trình Di động định hướng T-Shaped với đam mê xây dựng các ứng dụng đa nền tảng mượt mà (120fps), tối ưu phần cứng thiết bị chuyên dụng và tích hợp giải pháp thời gian thực. Với tư duy hệ thống vững chắc từ tầng Backend đến máy chủ Production, tôi luôn hướng tới các sản phẩm mang lại trải nghiệm tin cậy cho người dùng.
         </p>
 
         <!-- Call to Action Buttons -->
         <div class="hero-cta">
-          <a href="developer.html" class="btn btn-primary">Khám phá Ứng dụng &amp; Dự án</a>
-          <a href="cv-vi.html" class="btn btn-outline">Xem Hồ Sơ Năng Lực (CV)</a>
+          <a href="#cv-section" class="btn btn-primary">Xem Hồ Sơ Năng Lực (CV)</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-drive-cv-vi" data-config="driveCvViUrl" title="Mở CV Tiếng Việt trên Google Drive">
+            📄 CV Tiếng Việt (Drive)
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-drive-cv-en" data-config="driveCvEnUrl" title="Mở CV Tiếng Anh trên Google Drive">
+            📄 CV English (Drive)
+          </a>
+          <a href="developer.html" class="btn btn-outline">Khám phá Ứng dụng &amp; Dự án</a>
         </div>
       </section>
 
@@ -86,8 +85,7 @@
 
         <div class="timeline" role="list">
           
-          <!-- TIMELINE ITEM 1 -->
-          <!-- EDITABLE: Mốc 2022 -->
+          <!-- TIMELINE ITEM 1: 2022 -->
           <article class="timeline-item reveal" role="listitem">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-card">
@@ -101,8 +99,7 @@
             </div>
           </article>
 
-          <!-- TIMELINE ITEM 2 -->
-          <!-- EDITABLE: Mốc 2024 -->
+          <!-- TIMELINE ITEM 2: 2024 -->
           <article class="timeline-item reveal" role="listitem">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-card">
@@ -116,8 +113,7 @@
             </div>
           </article>
 
-          <!-- TIMELINE ITEM 3 -->
-          <!-- EDITABLE: Mốc 2025 -->
+          <!-- TIMELINE ITEM 3: 2025 -->
           <article class="timeline-item reveal" role="listitem">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-card">
@@ -131,8 +127,7 @@
             </div>
           </article>
 
-          <!-- TIMELINE ITEM 4 -->
-          <!-- EDITABLE: Mốc 2026 / Hiện tại -->
+          <!-- TIMELINE ITEM 4: 2026 -->
           <article class="timeline-item reveal" role="listitem">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-card">
@@ -149,6 +144,351 @@
         </div>
       </section>
 
+      <!-- ====================================================================
+           INTEGRATED CV SECTION (Tiếng Việt & English Tabs)
+           ==================================================================== -->
+      <section id="cv-section" class="cv-section-wrapper reveal" aria-labelledby="cv-main-heading" style="margin-top: var(--space-3xl); margin-bottom: var(--space-3xl);">
+        <h2 id="cv-main-heading" class="section-title">Hồ Sơ Năng Lực (CV)</h2>
+        <p class="section-desc">Toàn bộ kinh nghiệm làm việc, kỹ năng chuyên môn, học vấn và các dự án tiêu biểu</p>
+
+        <!-- CV TAB SWITCHER & ACTION CONTROLS -->
+        <div class="cv-tabs-container">
+          <div class="cv-tabs" role="tablist" aria-label="Chọn ngôn ngữ CV">
+            <button type="button" class="cv-tab-btn active" data-tab="vi" role="tab" aria-selected="true" aria-controls="cv-panel-vi">
+              🇻🇳 Tiếng Việt
+            </button>
+            <button type="button" class="cv-tab-btn" data-tab="en" role="tab" aria-selected="false" aria-controls="cv-panel-en">
+              🇺🇸 English
+            </button>
+          </div>
+
+          <div class="cv-actions">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-drive-cv" data-config="driveCvUrl" id="drive-cv-btn" title="Mở file CV gốc trên Google Drive">
+              📄 Xem file trên Google Drive
+            </a>
+            <button type="button" class="btn btn-primary" onclick="window.print()" title="In hoặc lưu CV dưới dạng file PDF">
+              🖨️ Tải PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             TAB 1: BẢN TIẾNG VIỆT (VIETNAMESE CV)
+             ================================================================== -->
+        <div id="cv-panel-vi" class="cv-tab-panel active" data-lang="vi" role="tabpanel">
+          <article class="cv-sheet">
+            
+            <header class="cv-header">
+              <h1 class="cv-name">Phạm Ngọc Huy</h1>
+              <p class="cv-role">Kỹ Sư Lập Trình Di Động (Flutter &amp; React Native)</p>
+              
+              <div class="cv-contact">
+                <span>📍 Gò Vấp, TP. Hồ Chí Minh, Việt Nam</span>
+                <span>&bull;</span>
+                <span>📞 0328 559 320</span>
+                <span>&bull;</span>
+                <a href="mailto:ngochuy200104@gmail.com">ngochuy200104@gmail.com</a>
+                <span>&bull;</span>
+                <a href="https://www.linkedin.com/in/pham-ngoc-huy-29689b378/" target="_blank" rel="noopener noreferrer" data-config="linkedinUrl">LinkedIn</a>
+                <span>&bull;</span>
+                <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" data-config="githubUrl">GitHub</a>
+              </div>
+            </header>
+
+            <!-- TÓM TẮT NĂNG LỰC -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Tóm tắt năng lực</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);">
+                Kỹ sư Phần mềm định hướng <strong>T-Shaped Mobile Engineer</strong> với chuyên môn mũi nhọn là <strong>Flutter</strong> &amp; <strong>React Native</strong>, được củng cố bởi nền tảng <strong>Thực tập sinh Fullstack</strong> trong môi trường doanh nghiệp thực tế. Làm chủ kỹ thuật tối ưu cuộn mượt <strong>120fps</strong>, tích hợp phần cứng <strong>Laser Scanner PDA</strong>, truyền thông thời gian thực <strong>WebRTC LiveKit</strong>, đồng thời am hiểu sâu luồng dữ liệu Backend (<strong>.NET, FastAPI, SQL Concurrency</strong>) và quản trị triển khai máy chủ <strong>Production Windows Server / IIS</strong>.
+              </p>
+            </section>
+
+            <!-- KINH NGHIỆM LÀM VIỆC -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Kinh nghiệm làm việc</h3>
+              
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">Công ty TNHH Công nghệ và Dịch vụ VPS</span>
+                  <span class="cv-item-time">Tháng 06/2026 &ndash; Tháng 11/2026</span>
+                </div>
+                <p class="cv-item-sub">Thực tập sinh Fullstack (Fullstack Developer Intern) &bull; TP. Hồ Chí Minh</p>
+                <ul class="cv-list">
+                  <li>
+                    <strong>Mobile App Kho bãi (React Native 0.86 &amp; React 19):</strong> Tối ưu tác nghiệp kho bằng cách kết nối máy quét mã Laser PDA Android qua Broadcast Intent giúp giảm hơn <strong>80% thao tác quét thủ công</strong>; tích hợp <strong>LiveKit WebRTC SFU</strong> và SignalR Hub duy trì cuộc gọi Audio/Video độ trễ <strong>&lt;500ms</strong> xử lý tức thời sự cố hiện trường.
+                  </li>
+                  <li>
+                    <strong>Backend &amp; Web Điều phối Kho (.NET 8 &amp; Angular):</strong> Xây dựng API Backend theo chuẩn Clean Architecture xử lý đường ống tra cứu quét mã tập trung và thuật toán dồn pallet tự động (Auto-Merge); phát triển cổng quản trị Web điều phối kho bãi bằng Angular Standalone mang lại trải nghiệm mượt mà.
+                  </li>
+                  <li>
+                    <strong>Quản trị Hạ tầng &amp; Triển khai Máy chủ:</strong> Được công ty tin tưởng phân quyền quản trị máy chủ, trực tiếp vận hành quy trình phát hành <strong>Zero-Downtime Deployment</strong> cho các dịch vụ API và Web trên <strong>Windows Server / IIS</strong>, thiết lập an ninh tường lửa Windows Defender và mạng nội bộ Tailscale VPN, đảm bảo thời gian hoạt động 24/7.
+                  </li>
+                  <li>
+                    <strong>Nâng cấp App Họp số (React Native 0.71 &amp; CI/CD):</strong> Bảo trì và phát triển ứng dụng quản lý lịch họp doanh nghiệp; triển khai luồng xác thực <strong>OAuth 2.0 PKCE SSO</strong>, cơ chế chống chụp màn hình; thiết lập đường ống <strong>Fastlane + GitHub Actions</strong> rút ngắn chu kỳ build lên Apple TestFlight từ 2 ngày xuống <strong>&lt;20 phút</strong>.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- DỰ ÁN TIÊU BIỂU -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Dự án tiêu biểu</h3>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">GPLX A1 - 200 Câu &mdash; Ứng Dụng Ôn Thi Sát Hạch Lái Xe Máy (Đã lên CH Play)</span>
+                  <span class="cv-item-time">Năm 2026</span>
+                </div>
+                <p class="cv-item-sub">Flutter, Dart, Clean Architecture, Provider, SharedPreferences, QCVN 41:2019</p>
+                <ul class="cv-list">
+                  <li>Phát hành chính thức lên <strong>Google Play Store (Package: vn.huypham.gplx.a1)</strong> phục vụ người học bằng lái xe máy hạng A1.</li>
+                  <li>Đóng gói 100% dữ liệu offline 200 câu hỏi chuẩn Bộ GTVT, ma trận đề thi 25 câu/19 phút với thuật toán chấm điểm và câu điểm liệt chuẩn xác.</li>
+                  <li>Tích hợp tra cứu đầy đủ 5 nhóm biển báo đường bộ, cẩm nang sa hình và mẹo thi lý thuyết dễ hiểu.</li>
+                </ul>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">NailMatch (ShopNail) &mdash; Ứng Dụng Đặt Lịch &amp; AI Gợi Ý Mẫu Nail</span>
+                  <span class="cv-item-time">Tháng 08/2026 &ndash; Tháng 10/2026</span>
+                </div>
+                <p class="cv-item-sub">Flutter, FastAPI, PostgreSQL (pgvector), Supabase</p>
+                <ul class="cv-list">
+                  <li>Đạt tốc độ khung hình ổn định <strong>120fps</strong> và giảm <strong>65% mức tiêu thụ RAM</strong> nhờ thiết kế kiến trúc bộ nhớ đệm 3 tầng (RAM Downsampling, Disk LRU, Hive SWR kết hợp giải mã BlurHash bất đồng bộ và RepaintBoundary).</li>
+                  <li>Rút ngắn độ trễ truy vấn gợi ý thợ xuống <strong>&lt;50ms</strong> bằng pipeline thị giác máy tính (MediaPipe Hands + ResNet-18) bóc tách vector 512d và tìm kiếm tương đồng Cosine qua chỉ mục <strong>pgvector HNSW</strong>.</li>
+                  <li>Triệt tiêu <strong>100% xung đột trùng lịch đặt hẹn (Double-Booking)</strong> khi truy cập đồng thời cao bằng PostgreSQL Exclusion Constraints kết hợp lập lịch nhắc hẹn ngoại tuyến qua OS AlarmManager.</li>
+                </ul>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">NewsWave &mdash; Ứng Dụng Đọc Báo Ngoại Tuyến (Offline-First)</span>
+                  <span class="cv-item-time">Tháng 01/2026 &ndash; Tháng 03/2026</span>
+                </div>
+                <p class="cv-item-sub">Flutter, Clean Architecture, BLoC 9.0, Hive, Dio, TDD</p>
+                <ul class="cv-list">
+                  <li>Đạt tốc độ phản hồi đọc tin ngoại tuyến tức thì (Offline-first) qua cơ sở dữ liệu cục bộ Hive và SharedPreferences; cấu trúc Clean Architecture 3 tầng với BLoC 9.0 và xử lý lỗi hàm.</li>
+                  <li>Đảm bảo tính ổn định cao với bộ kiểm thử tự động TDD gồm <strong>14 file test (~2.200 dòng code)</strong>, bao phủ toàn diện từ Unit Test, BLoC Test đến Widget Test.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- HỌC VẤN -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Học vấn</h3>
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">Trường Đại học Công nghệ TP.HCM (HUTECH)</span>
+                  <span class="cv-item-time">2022 &ndash; 2026</span>
+                </div>
+                <p class="cv-item-sub">Cử nhân Kỹ thuật Phần mềm &bull; Điểm trung bình tích lũy (GPA): <strong>3.54 / 4.0</strong> (Hạng Giỏi / Xuất sắc)</p>
+              </div>
+            </section>
+
+            <!-- CHỨNG CHỈ & NGOẠI NGỮ -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Chứng chỉ &amp; Ngôn ngữ</h3>
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">Chứng chỉ TOEIC Reading &amp; Listening: 570</span>
+                  <span class="cv-item-time">Tháng 08/2025</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                  Khả năng đọc hiểu lưu loát tài liệu kỹ thuật chuyên ngành, đặc tả hệ thống và tài liệu API.
+                </p>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">Chứng chỉ TOEIC Speaking &amp; Writing: 270</span>
+                  <span class="cv-item-time">Tháng 03/2026</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                  Giao tiếp và trao đổi công việc kỹ thuật hiệu quả bằng văn bản và đàm thoại.
+                </p>
+              </div>
+            </section>
+
+            <!-- KỸ NĂNG CHUYÊN MÔN -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Kỹ năng chuyên môn</h3>
+              <div class="cv-skills-grid">
+                <p class="cv-skill-line">
+                  <strong>Lập trình Di động:</strong> Flutter SDK (3.x), React Native (0.71, 0.86 / React 19), Dart, TypeScript, JavaScript (ES6+), Android SDK, iOS.
+                </p>
+                <p class="cv-skill-line">
+                  <strong>Quản lý Trạng thái &amp; Kiến trúc:</strong> Clean Architecture, SOLID, DDD, BLoC, Cubit, Zustand 5, TanStack Query 5, Provider, Hive.
+                </p>
+                <p class="cv-skill-line">
+                  <strong>Web &amp; Backend:</strong> Angular, .NET 8 (ASP.NET Core Web API), Python FastAPI, SQL Server, PostgreSQL (pgvector, btree_gist).
+                </p>
+                <p class="cv-skill-line">
+                  <strong>Hạ tầng &amp; DevOps:</strong> Windows Server 2022, IIS, Zero-Downtime Deployment, Tailscale VPN, Fastlane, GitHub Actions CI/CD, TDD.
+                </p>
+              </div>
+            </section>
+
+          </article>
+        </div>
+
+        <!-- ==================================================================
+             TAB 2: BẢN TIẾNG ANH (ENGLISH CV)
+             ================================================================== -->
+        <div id="cv-panel-en" class="cv-tab-panel" data-lang="en" role="tabpanel" hidden>
+          <article class="cv-sheet">
+            
+            <header class="cv-header">
+              <h1 class="cv-name">Pham Ngoc Huy</h1>
+              <p class="cv-role">Cross-Platform Mobile Developer (Flutter &amp; React Native)</p>
+              
+              <div class="cv-contact">
+                <span>📍 Go Vap, Ho Chi Minh City, Vietnam</span>
+                <span>&bull;</span>
+                <span>📞 (+84) 328 559 320</span>
+                <span>&bull;</span>
+                <a href="mailto:ngochuy200104@gmail.com">ngochuy200104@gmail.com</a>
+                <span>&bull;</span>
+                <a href="https://www.linkedin.com/in/pham-ngoc-huy-29689b378/" target="_blank" rel="noopener noreferrer" data-config="linkedinUrl">LinkedIn</a>
+                <span>&bull;</span>
+                <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" data-config="githubUrl">GitHub</a>
+              </div>
+            </header>
+
+            <!-- PROFILE SUMMARY -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Profile Summary</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);">
+                Software Engineer positioning as a <strong>T-Shaped Mobile Developer</strong> specializing in <strong>Flutter</strong> &amp; <strong>React Native</strong>, fortified by enterprise <strong>Fullstack Intern</strong> experience. Proven expertise in <strong>120fps</strong> rendering optimization, <strong>PDA Laser Barcode</strong> scanner integration, and <strong>WebRTC LiveKit</strong> real-time communication, combined with solid backend comprehension (<strong>.NET 8 DDD, FastAPI, SQL Concurrency</strong>) and hands-on <strong>Windows Server / IIS Production Zero-Downtime Deployment</strong>.
+              </p>
+            </section>
+
+            <!-- WORK EXPERIENCE -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Work Experience</h3>
+              
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">VPS Technology and Services Co., Ltd.</span>
+                  <span class="cv-item-time">Jun. 2026 &ndash; Nov. 2026</span>
+                </div>
+                <p class="cv-item-sub">Fullstack Developer Intern &bull; Ho Chi Minh City, Vietnam</p>
+                <ul class="cv-list">
+                  <li>
+                    <strong>Warehouse Handheld App (React Native 0.86 &amp; React 19):</strong> Streamlined warehouse execution by integrating Android PDA laser scanners via Broadcast Intents, eliminating over <strong>80% of repetitive manual scans</strong>; integrated sub-<strong>500ms</strong> WebRTC audio/video calls via <strong>LiveKit SFU</strong> and SignalR Hub for instant incident inspection.
+                  </li>
+                  <li>
+                    <strong>Backend API &amp; Web Dispatcher (.NET 8 &amp; Angular):</strong> Engineered Clean Architecture backend services handling unified scan lookups and automated pallet consolidation (Auto-Merge); built responsive warehouse management dashboards using Angular Standalone components.
+                  </li>
+                  <li>
+                    <strong>Production Server Provisioning &amp; Deployment:</strong> Entrusted with production server administration rights, orchestrated <strong>Zero-Downtime Deployment</strong> releases for backend APIs and web portals on <strong>Windows Server 2022 / IIS</strong>, enforcing Tailscale Mesh VPN and Windows Defender firewall policies for 24/7 warehouse uptime.
+                  </li>
+                  <li>
+                    <strong>Paperless E-Meeting App Refactor (React Native 0.71 &amp; CI/CD):</strong> Maintained enterprise meeting app, delivering <strong>OAuth 2.0 PKCE SSO</strong> with recursive unit parsers and screenshot prevention; built automated <strong>Fastlane + GitHub Actions</strong> CI/CD pipelines to cut Apple TestFlight releases from 2 days to <strong>&lt;20 minutes</strong>.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- FEATURED PROJECTS -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Featured Projects</h3>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">GPLX A1 - 200 Câu &mdash; Motorbike License Exam Prep (Published on CH Play)</span>
+                  <span class="cv-item-time">2026</span>
+                </div>
+                <p class="cv-item-sub">Flutter, Dart, Clean Architecture, Provider, SharedPreferences, QCVN 41:2019</p>
+                <ul class="cv-list">
+                  <li>Officially published on <strong>Google Play Store (Package: vn.huypham.gplx.a1)</strong> for Vietnamese learners preparing for A1 motorcycle license theory tests.</li>
+                  <li>Packaged with 100% offline data of 200 standard questions, 25-question / 19-minute mock test simulator, and accurate failure-penalty calculation.</li>
+                  <li>Includes full road sign lookup (5 categories), practice tips, and trick guides.</li>
+                </ul>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">NailMatch (ShopNail) &mdash; AI Nail Art Matcher</span>
+                  <span class="cv-item-time">Aug. 2026 &ndash; Oct. 2026</span>
+                </div>
+                <p class="cv-item-sub">Flutter 3.8+, FastAPI, PostgreSQL (pgvector), Supabase</p>
+                <ul class="cv-list">
+                  <li>Maintained consistent <strong>120fps</strong> smooth scrolling and slashed RAM consumption by <strong>65%</strong> via a 3-tier caching architecture (RAM Downsampling, Disk LRU, Hive SWR with async BlurHash decoding).</li>
+                  <li>Cut artist recommendation query latency to <strong>&lt;50ms</strong> using a computer vision pipeline (MediaPipe Hands + ResNet-18) for 512d feature extraction and Cosine similarity search via <strong>pgvector HNSW</strong> indexing.</li>
+                  <li>Eradicated <strong>100% of double-booking conflicts</strong> under high concurrency using PostgreSQL Exclusion Constraints combined with offline reminders scheduled via native OS AlarmManager.</li>
+                </ul>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">NewsWave &mdash; Offline-First News Reader</span>
+                  <span class="cv-item-time">Jan. 2026 &ndash; Mar. 2026</span>
+                </div>
+                <p class="cv-item-sub">Flutter, Clean Architecture, BLoC 9.0, Hive, Dio, TDD</p>
+                <ul class="cv-list">
+                  <li>Delivered instant offline article reads (Offline-first) via local Hive database and SharedPreferences; structured robust 3-tier Clean Architecture with BLoC 9.0 and functional error handling.</li>
+                  <li>Guaranteed enterprise codebase reliability with a comprehensive automated TDD suite of <strong>14 test files (~2,200 LOC)</strong>, spanning Unit tests, BLoC tests, and Widget tests.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- EDUCATION & CERTIFICATIONS -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Education &amp; Certifications</h3>
+              
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">Ho Chi Minh City University of Technology (HUTECH)</span>
+                  <span class="cv-item-time">2022 &ndash; 2026</span>
+                </div>
+                <p class="cv-item-sub">Bachelor of Software Engineering &bull; GPA: <strong>3.54 / 4.0</strong> (High Distinction / Distinction)</p>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">TOEIC Reading &amp; Listening: 570</span>
+                  <span class="cv-item-time">Aug. 2025</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                  Proficient in reading technical documentation, software specifications, and RESTful API schemas.
+                </p>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-header">
+                  <span class="cv-item-title">TOEIC Speaking &amp; Writing: 270</span>
+                  <span class="cv-item-time">Mar. 2026</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                  Solid verbal and written technical communication skills in professional environments.
+                </p>
+              </div>
+            </section>
+
+            <!-- TECHNICAL SKILLS -->
+            <section class="cv-section">
+              <h3 class="cv-section-title">Skills &amp; Technologies</h3>
+              <div class="cv-skills-grid">
+                <p class="cv-skill-line">
+                  <strong>Mobile Development:</strong> Flutter SDK (3.x), React Native (0.71, 0.86 / React 19), Dart, TypeScript, JavaScript (ES6+), Android SDK, iOS.
+                </p>
+                <p class="cv-skill-line">
+                  <strong>Architecture &amp; State:</strong> Clean Architecture, SOLID, DDD, BLoC / Cubit, Zustand 5, TanStack Query 5, Provider, Offline-first (Hive).
+                </p>
+                <p class="cv-skill-line">
+                  <strong>Web &amp; Backend:</strong> Angular, .NET 8 (ASP.NET Core Web API), Python FastAPI, Microsoft SQL Server, PostgreSQL (pgvector, btree_gist).
+                </p>
+                <p class="cv-skill-line">
+                  <strong>DevOps &amp; Infra:</strong> Windows Server 2022, IIS, Zero-Downtime Deployment, Tailscale VPN, Fastlane, GitHub Actions CI/CD, TDD.
+                </p>
+              </div>
+            </section>
+
+          </article>
+        </div>
+
+      </section>
+
     </div>
   </main>
 
@@ -157,13 +497,13 @@
        ======================================================================== -->
   <footer class="site-footer">
     <div class="container">
-      <!-- EDITABLE: Thông tin bản quyền footer -->
-      <p>&copy; 2024 — 2026 Phạm Ngọc Huy. Mọi quyền được bảo lưu.</p>
+      <p>&copy; 2024 &mdash; 2026 Phạm Ngọc Huy. Mọi quyền được bảo lưu.</p>
       <p>Thiết kế bằng HTML5, CSS thuần &amp; Vanilla JavaScript &bull; Tối ưu cho GitHub Pages.</p>
     </div>
   </footer>
 
-  <!-- Shared JavaScript Interaction Engine -->
+  <!-- Site Config & JavaScript Interaction Engine -->
+  <script src="config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

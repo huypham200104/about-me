@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- EDITABLE: Tiêu đề và mô tả SEO cho trang Developer -->
   <title>Developer &amp; Published Apps — Phạm Ngọc Huy</title>
-  <meta name="description" content="Danh mục ứng dụng đã phát hành, dự án kỹ thuật và Tech Stack của Phạm Ngọc Huy — Mobile Developer.">
+  <meta name="description" content="Danh mục ứng dụng di động đã phát hành trên Google Play Store (CH Play) và Tech Stack của Phạm Ngọc Huy — Mobile Developer.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   
   <!-- Google Fonts: Inter -->
@@ -25,7 +24,6 @@
     <div class="container nav-container">
       <a href="index.html" class="brand-link" aria-label="Trang chủ Phạm Ngọc Huy">
         <span class="brand-badge">PNH</span>
-        <!-- EDITABLE: Họ tên thương hiệu -->
         <span>Phạm Ngọc Huy</span>
       </a>
 
@@ -34,8 +32,6 @@
           <ul class="nav-links" id="nav-links">
             <li><a href="index.html" class="nav-link">Trang chủ</a></li>
             <li><a href="developer.html" class="nav-link active">Developer &amp; Apps</a></li>
-            <li><a href="cv-vi.html" class="nav-link">CV (Tiếng Việt)</a></li>
-            <li><a href="cv-en.html" class="nav-link">CV (English)</a></li>
           </ul>
         </nav>
 
@@ -58,138 +54,135 @@
   <main class="main-content">
     <div class="container">
       
-      <!-- DEVELOPER INTRO SECTION -->
-      <section class="developer-intro reveal" aria-labelledby="dev-intro-heading">
-        <h1 id="dev-intro-heading" class="section-title">Nhà Phát Triển Ứng Dụng Di Động</h1>
-        <p class="section-desc">
-          Tập trung vào trải nghiệm cuộn mượt 120fps, kiến trúc Clean Architecture dễ mở rộng, tích hợp phần cứng chuyên dụng và phát hành ứng dụng ổn định lên Google Play Store.
-        </p>
+      <!-- DEVELOPER BRAND HERO (Sử dụng background-chplay & my-logo-chplay) -->
+      <section class="dev-hero reveal" aria-labelledby="dev-hero-title">
+        <div class="dev-hero-overlay">
+          <div class="dev-brand-header">
+            <img src="assets/my-logo-chplay.png" alt="Phạm Ngọc Huy Logo" class="dev-brand-logo">
+            <div class="dev-brand-info">
+              <h1 id="dev-hero-title" class="dev-brand-title">Phạm Ngọc Huy</h1>
+              <p class="dev-brand-subtitle">Mobile Application Developer &bull; Android &amp; Cross-Platform</p>
+            </div>
+          </div>
+          <p class="dev-hero-desc">
+            Chào mừng bạn đến với trang giới thiệu sản phẩm di động! Dưới đây là ứng dụng di động độc lập được thiết kế, tối ưu kiến trúc và phát hành chính thức lên <strong>Google Play Store (CH Play)</strong>. Mọi chi tiết từ thiết kế giao diện Material 3, dữ liệu offline, kiểm thử tự động đến cấu hình ký số bảo mật đều được hoàn thiện tỉ mỉ.
+          </p>
+        </div>
       </section>
 
-      <!-- SECTION: PUBLISHED APPS & PROJECTS -->
+      <!-- SECTION: FEATURED PUBLISHED APP ON CH PLAY -->
       <section class="apps-section" aria-labelledby="apps-heading">
-        <h2 id="apps-heading" class="section-title reveal">Ứng Dụng Đã Xuất Bản &amp; Tiêu Biểu</h2>
-        <p class="section-desc reveal">Danh sách các sản phẩm và ứng dụng di động được nghiên cứu, phát triển và tối ưu thực tế</p>
+        <h2 id="apps-heading" class="section-title reveal">Ứng Dụng Đã Xuất Bản Lên CH Play</h2>
+        <p class="section-desc reveal">Sản phẩm thực tế có mặt trên Google Play Store phục vụ người dùng</p>
 
-        <div class="card-grid">
+        <!-- APP SHOWCASE CARD: GPLX A1 - 200 CÂU -->
+        <article class="featured-app-card reveal">
+          
+          <!-- App Header -->
+          <div class="featured-app-header">
+            <img src="assets/tracnghiemlaixea1/icon_512x512.png" alt="Icon GPLX A1 - 200 Câu" class="app-main-icon">
+            <div class="featured-app-meta" style="flex: 1;">
+              <h3>🏍️ GPLX A1 - 200 Câu</h3>
+              <div style="display: flex; gap: var(--space-xs); flex-wrap: wrap; align-items: center; margin-bottom: var(--space-xs);">
+                <span class="app-package-badge">vn.huypham.gplx.a1</span>
+                <span class="badge badge-android">Android</span>
+                <span class="badge badge-crossplatform">100% Offline</span>
+                <span class="badge" style="background-color: #2E7D32; color: #FFFFFF;">Đã lên CH Play</span>
+              </div>
+            </div>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-playstore" data-config="playStoreUrl" id="playstore-top-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; padding: 0.65rem 1.25rem;">
+              ▶ Tải trên Google Play
+            </a>
+          </div>
 
-          <!-- APP CARD 1 -->
-          <!-- EDITABLE: Dự án NailMatch -->
-          <article class="app-card reveal">
-            <div class="app-card-top">
-              <div class="card-icon" aria-hidden="true">💅</div>
-              <span class="badge badge-crossplatform">Cross-platform</span>
-            </div>
-            <h3 class="app-title">NailMatch (ShopNail)</h3>
-            <p class="app-desc">
-              Ứng dụng gợi ý mẫu nail nghệ thuật ứng dụng thị giác máy tính AI (MediaPipe + ResNet-18) với độ trễ &lt;50ms qua pgvector HNSW. Tối ưu bộ nhớ đệm 3 tầng đạt chuẩn 120fps và triệt tiêu trùng lịch bằng PostgreSQL Exclusion Constraints.
-            </p>
-            <div class="tech-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Supabase</span>
-              <span class="tag">pgvector</span>
-            </div>
-            <div class="app-card-actions">
-              <!-- EDITABLE: Link Play Store cho NailMatch (thay bằng link thực tế của bạn) -->
-              <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
-                ▶ Google Play
-              </a>
-              <!-- EDITABLE: Link GitHub repo -->
-              <a href="https://github.com/shopnail/shopnail" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
-                GitHub
-              </a>
-            </div>
-          </article>
+          <!-- App Description -->
+          <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-md);">
+            <strong>GPLX A1 - 200 Câu</strong> là ứng dụng di động được thiết kế chuyên biệt để giúp người học ôn tập nhanh, ghi nhớ sâu và tự tin đỗ 100% kỳ thi sát hạch lý thuyết lái xe mô tô Hạng A1 theo chuẩn 200 câu hỏi mới nhất từ <strong>Cục Đường bộ Việt Nam (Bộ GTVT)</strong>. Toàn bộ dữ liệu câu hỏi, sa hình, biển báo và mẹo thi được đóng gói sẵn trong ứng dụng — <strong>hoạt động hoàn toàn không cần Internet, không quảng cáo làm phiền và không thu thập dữ liệu cá nhân</strong>.
+          </p>
 
-          <!-- APP CARD 2 -->
-          <!-- EDITABLE: Dự án NewsWave -->
-          <article class="app-card reveal">
-            <div class="app-card-top">
-              <div class="card-icon" aria-hidden="true">📰</div>
-              <span class="badge badge-crossplatform">Cross-platform</span>
-            </div>
-            <h3 class="app-title">NewsWave Mobile</h3>
-            <p class="app-desc">
-              Ứng dụng đọc báo ngoại tuyến tức thì (Offline-first) với bộ nhớ cục bộ Hive. Áp dụng Clean Architecture 3 tầng, BLoC 9.0 và bộ kiểm thử tự động TDD toàn diện với 14 file test (~2.200 LOC) bao phủ Unit, BLoC và Widget test.
-            </p>
-            <div class="tech-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Clean Architecture</span>
-              <span class="tag">BLoC 9.0</span>
-              <span class="tag">Hive</span>
-              <span class="tag">TDD</span>
-            </div>
-            <div class="app-card-actions">
-              <!-- EDITABLE: Link Play Store cho NewsWave -->
-              <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
-                ▶ Google Play
-              </a>
-              <a href="https://github.com/huypham200104/NewsWave" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
-                GitHub
-              </a>
-            </div>
-          </article>
+          <!-- Feature Graphic Banner -->
+          <div class="app-banner-container">
+            <img src="assets/tracnghiemlaixea1/banner_feature_graphic_1024x500.png" alt="Banner GPLX A1 - 200 Câu Feature Graphic">
+          </div>
 
-          <!-- APP CARD 3 -->
-          <!-- EDITABLE: Dự án FG-Kho PDA -->
-          <article class="app-card reveal">
-            <div class="app-card-top">
-              <div class="card-icon" aria-hidden="true">📦</div>
-              <span class="badge badge-android">Android</span>
-            </div>
-            <h3 class="app-title">FG-Kho PDA Warehouse</h3>
-            <p class="app-desc">
-              Ứng dụng chuyên dụng cho máy cầm tay Android PDA (Honeywell, Zebra) trong quản lý kho bãi. Tích hợp súng quét Laser qua Broadcast Intent giảm 80% thao tác quét, đàm thoại video WebRTC LiveKit thời gian thực &lt;500ms.
-            </p>
-            <div class="tech-tags">
-              <span class="tag">React Native 0.86</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">LiveKit WebRTC</span>
-              <span class="tag">SignalR</span>
-              <span class="tag">PDA Scanner</span>
-            </div>
-            <div class="app-card-actions">
-              <!-- EDITABLE: Link Play Store / Internal APK -->
-              <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
-                ▶ Google Play
-              </a>
-              <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
-                GitHub
-              </a>
-            </div>
-          </article>
+          <!-- Tech Stack Tags -->
+          <div class="tech-tags" style="margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+            <span class="tag">Flutter 3.8+</span>
+            <span class="tag">Dart 3.0+</span>
+            <span class="tag">Feature-first Clean Architecture</span>
+            <span class="tag">Provider State Management</span>
+            <span class="tag">SharedPreferences</span>
+            <span class="tag">Vector &amp; SDF Assets</span>
+            <span class="tag">Target SDK 36 (Android 14+)</span>
+            <span class="tag">Google Play Console</span>
+          </div>
 
-          <!-- APP CARD 4 -->
-          <!-- EDITABLE: Dự án E-Meeting App -->
-          <article class="app-card reveal">
-            <div class="app-card-top">
-              <div class="card-icon" aria-hidden="true">📋</div>
-              <span class="badge badge-crossplatform">Cross-platform</span>
+          <!-- Highlights Grid -->
+          <div class="feature-grid">
+            <div class="feature-box">
+              <h4>🎯 Thi sát hạch chuẩn Bộ GTVT</h4>
+              <p>25 câu hỏi làm trong 19 phút kèm đồng hồ đếm ngược real-time. Cơ chế điểm liệt chuẩn xác: sai dù chỉ 1 câu điểm liệt kết luận trượt ngay, đúng quy chế sát hạch.</p>
             </div>
-            <h3 class="app-title">E-Meeting &mdash; Họp Không Giấy Tờ</h3>
-            <p class="app-desc">
-              Ứng dụng quản trị lịch họp doanh nghiệp bảo mật cao với luồng xác thực OAuth 2.0 PKCE SSO, cơ chế ngăn chặn chụp màn hình bảo vệ tài liệu mật và pipeline Fastlane + GitHub Actions rút ngắn chu kỳ build xuống &lt;20 phút.
-            </p>
-            <div class="tech-tags">
-              <span class="tag">React Native</span>
-              <span class="tag">OAuth 2.0 PKCE</span>
-              <span class="tag">Fastlane</span>
-              <span class="tag">GitHub Actions</span>
-            </div>
-            <div class="app-card-actions">
-              <!-- EDITABLE: Link Play Store -->
-              <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
-                ▶ Google Play
-              </a>
-              <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
-                GitHub
-              </a>
-            </div>
-          </article>
 
-        </div>
+            <div class="feature-box">
+              <h4>📚 Ôn tập toàn diện 200 câu</h4>
+              <p>Phân chia khoa học theo 5 chương (Khái niệm &amp; luật, Văn hóa đạo đức, Kỹ thuật lái xe, Hệ thống biển báo, Sa hình). Mỗi câu đều có đáp án và giải thích chi tiết căn cứ luật.</p>
+            </div>
+
+            <div class="feature-box">
+              <h4>⚠️ Chuyên đề 20 câu điểm liệt</h4>
+              <p>Khu vực rèn luyện độc lập cho 20 câu hỏi tình huống mất an toàn giao thông nghiêm trọng, gắn nhãn cảnh báo đỏ trực quan giúp người học không bao giờ bị mất điểm oan.</p>
+            </div>
+
+            <div class="feature-box">
+              <h4>🛑 Tra cứu biển báo QCVN 41:2019</h4>
+              <p>Đầy đủ 5 nhóm biển báo đường bộ (biển cấm, hiệu lệnh, nguy hiểm, chỉ dẫn, phụ). Tìm kiếm thông minh theo mã số hoặc tên biển tiếng Việt không dấu.</p>
+            </div>
+
+            <div class="feature-box">
+              <h4>💡 Mẹo thi lý thuyết &amp; Sa hình</h4>
+              <p>Tổng hợp các câu khẩu quyết nhớ nhanh lý thuyết và cẩm nang thực hành thi máy: mẹo vào cua vòng số 8, qua đường gồ ghề và giữ thăng bằng.</p>
+            </div>
+
+            <div class="feature-box">
+              <h4>🔒 100% Offline &amp; Bảo mật</h4>
+              <p>Không cần kết nối mạng Internet, không yêu cầu đăng ký tài khoản hay quyền riêng tư nhạy cảm. Toàn bộ tiến độ học tập được lưu trữ an toàn trên thiết bị.</p>
+            </div>
+          </div>
+
+          <!-- Screenshots Showcase Gallery -->
+          <h4 class="screenshots-heading">📸 Ảnh chụp màn hình ứng dụng thực tế</h4>
+          <div class="screenshots-row">
+            <div class="screenshot-thumb">
+              <img src="assets/tracnghiemlaixea1/screenshots/screenshot_1_home_exam.png" alt="Trang chủ &amp; Thi thử sát hạch" loading="lazy">
+            </div>
+            <div class="screenshot-thumb">
+              <img src="assets/tracnghiemlaixea1/screenshots/screenshot_2_exam_session.png" alt="Đề thi 25 câu &amp; Đồng hồ 19 phút" loading="lazy">
+            </div>
+            <div class="screenshot-thumb">
+              <img src="assets/tracnghiemlaixea1/screenshots/screenshot_3_critical_questions.png" alt="20 Câu điểm liệt trọng tâm" loading="lazy">
+            </div>
+            <div class="screenshot-thumb">
+              <img src="assets/tracnghiemlaixea1/screenshots/screenshot_4_traffic_signs.png" alt="Tra cứu biển báo chuẩn QCVN 41" loading="lazy">
+            </div>
+          </div>
+
+          <!-- App Bottom Actions -->
+          <div class="app-card-actions" style="margin-top: var(--space-lg); justify-content: space-between; flex-wrap: wrap; gap: var(--space-md);">
+            <div style="font-size: 0.9rem; color: var(--text-muted);">
+              Phiên bản: <strong>1.0.2</strong> &bull; Đã kiểm duyệt và ký số Release Keystore
+            </div>
+            <div style="display: flex; gap: var(--space-sm);">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-playstore" data-config="playStoreUrl" id="playstore-btn">
+                ▶ Tải ngay trên Google Play
+              </a>
+              <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-config="githubUrl">
+                GitHub Repo
+              </a>
+            </div>
+          </div>
+
+        </article>
       </section>
 
       <!-- SECTION: TECH STACK BADGES -->
@@ -269,16 +262,13 @@
             Khám phá các repositories mã nguồn mở, dự án thử nghiệm và hồ sơ lập trình viên của tôi trên GitHub và Google Play Console.
           </p>
           <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-            <!-- EDITABLE: Link GitHub Profile -->
-            <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-config="githubUrl">
               ⭐ Xem GitHub Profile
             </a>
-            <!-- EDITABLE: Link Google Play Developer Console -->
-            <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-              📱 Google Play Console
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-playstore" data-config="playStoreUrl">
+              📱 Ứng dụng trên Google Play
             </a>
-            <!-- EDITABLE: Link LinkedIn -->
-            <a href="https://www.linkedin.com/in/pham-ngoc-huy-29689b378/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <a href="https://www.linkedin.com/in/pham-ngoc-huy-29689b378/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-config="linkedinUrl">
               💼 Kết nối LinkedIn
             </a>
           </div>
@@ -298,7 +288,8 @@
     </div>
   </footer>
 
-  <!-- Shared JavaScript Interaction Engine -->
+  <!-- Site Config & JavaScript Interaction Engine -->
+  <script src="config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

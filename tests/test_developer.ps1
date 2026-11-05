@@ -1,5 +1,8 @@
 param()
-$target = "about-me/developer.html"
+
+$baseDir = if (Test-Path "about-me/developer.html") { "about-me" } else { (Resolve-Path "$PSScriptRoot/..").Path }
+$target = Join-Path $baseDir "developer.html"
+
 if (-not (Test-Path $target)) {
     Write-Error "FAIL: $target does not exist"
     exit 1
@@ -9,15 +12,16 @@ $content = Get-Content -Raw $target
 
 $requiredTokens = @(
     "<!DOCTYPE html>",
-    "developer-intro",
-    "card-grid",
-    "app-card",
+    "dev-hero",
+    "assets/my-logo-chplay.png",
+    "GPLX A1 - 200 Câu",
+    "vn.huypham.gplx.a1",
+    "btn-playstore",
     "badge-android",
-    "badge-crossplatform",
     "tech-tags",
     "github-callout",
     "https://github.com/huypham200104",
-    "Google Play",
+    "config.js",
     "reveal"
 )
 
@@ -28,5 +32,5 @@ foreach ($token in $requiredTokens) {
     }
 }
 
-Write-Output "PASS: developer.html contains all required sections and features"
+Write-Output "PASS: developer.html contains all required sections and CH Play showcase features"
 exit 0

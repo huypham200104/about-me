@@ -1,55 +1,55 @@
 param()
 
-$enTarget = "about-me/cv-en.html"
-$viTarget = "about-me/cv-vi.html"
+$baseDir = if (Test-Path "about-me/index.html") { "about-me" } else { (Resolve-Path "$PSScriptRoot/..").Path }
+$target = Join-Path $baseDir "index.html"
 
-if (-not (Test-Path $enTarget)) {
-    Write-Error "FAIL: $enTarget does not exist"
-    exit 1
-}
-if (-not (Test-Path $viTarget)) {
-    Write-Error "FAIL: $viTarget does not exist"
+if (-not (Test-Path $target)) {
+    Write-Error "FAIL: $target does not exist"
     exit 1
 }
 
-$enContent = Get-Content -Raw $enTarget
-$viContent = Get-Content -Raw $viTarget
+$content = Get-Content -Raw $target
 
-# Check English tokens
+# Check English CV content
 $enTokens = @(
     "Pham Ngoc Huy",
     "Profile Summary",
     "Work Experience",
-    "Education",
-    "Skills",
-    "Download PDF",
-    "cv-vi.html",
+    "Education &amp; Certifications",
+    "Skills &amp; Technologies",
+    "cv-panel-en",
     "window.print()"
 )
 foreach ($token in $enTokens) {
-    if (-not $enContent.Contains($token)) {
-        Write-Error "FAIL: Missing token in cv-en.html: '$token'"
+    if (-not $content.Contains($token)) {
+        Write-Error "FAIL: Missing English CV token in index.html: '$token'"
         exit 1
     }
 }
 
-# Check Vietnamese tokens
+# Check Vietnamese CV content
 $viTokens = @(
     "Phạm Ngọc Huy",
-    "Tóm tắt",
+    "Tóm tắt năng lực",
     "Kinh nghiệm làm việc",
     "Học vấn",
-    "Kỹ năng",
-    "Tải PDF",
-    "cv-en.html",
+    "Kỹ năng chuyên môn",
+    "cv-panel-vi",
+    "btn-drive-cv",
     "window.print()"
 )
 foreach ($token in $viTokens) {
-    if (-not $viContent.Contains($token)) {
-        Write-Error "FAIL: Missing token in cv-vi.html: '$token'"
+    if (-not $content.Contains($token)) {
+        Write-Error "FAIL: Missing Vietnamese CV token in index.html: '$token'"
         exit 1
     }
 }
 
-Write-Output "PASS: Both cv-en.html and cv-vi.html meet structural and reciprocal link requirements"
+# Check Tab switcher
+if (-not $content.Contains("cv-tab-btn") -or -not $content.Contains('data-tab="vi"') -or -not $content.Contains('data-tab="en"')) {
+    Write-Error "FAIL: Missing CV language tab switcher in index.html"
+    exit 1
+}
+
+Write-Output "PASS: Integrated CV in index.html contains complete Vietnamese & English sections with tabs and Drive links"
 exit 0

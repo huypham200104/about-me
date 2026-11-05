@@ -1,7 +1,8 @@
 param()
 
-$css = Get-Content -Raw "about-me/css/style.css"
-$js = Get-Content -Raw "about-me/js/main.js"
+$baseDir = if (Test-Path "about-me/css/style.css") { "about-me" } else { (Resolve-Path "$PSScriptRoot/..").Path }
+$css = Get-Content -Raw (Join-Path $baseDir "css/style.css")
+$js = Get-Content -Raw (Join-Path $baseDir "js/main.js")
 
 # 1. Test Issue 1 & 3: Print styles reset CSS variables and avoid page breaks
 if (-not ($css -match "@media print\s*\{[^}]*\[data-theme=""dark""\]")) {

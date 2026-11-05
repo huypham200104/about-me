@@ -1,5 +1,6 @@
 param()
-$target = "about-me/css/style.css"
+$baseDir = if (Test-Path "about-me/css/style.css") { "about-me" } else { (Resolve-Path "$PSScriptRoot/..").Path }
+$target = Join-Path $baseDir "css/style.css"
 if (-not (Test-Path $target)) {
     Write-Error "FAIL: $target does not exist"
     exit 1
@@ -25,7 +26,6 @@ $requiredTokens = @(
     ".nav-container",
     ".theme-toggle",
     ".timeline",
-    ".app-card",
     ".cv-sheet",
     ".reveal",
     "@media (max-width: 768px)",
