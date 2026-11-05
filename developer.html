@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDITABLE: Tiêu đề và mô tả SEO cho trang Developer -->
+  <title>Developer &amp; Published Apps — Phạm Ngọc Huy</title>
+  <meta name="description" content="Danh mục ứng dụng đã phát hành, dự án kỹ thuật và Tech Stack của Phạm Ngọc Huy — Mobile Developer.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER & NAVIGATION BAR
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="Trang chủ Phạm Ngọc Huy">
+        <span class="brand-badge">PNH</span>
+        <!-- EDITABLE: Họ tên thương hiệu -->
+        <span>Phạm Ngọc Huy</span>
+      </a>
+
+      <div class="nav-controls">
+        <nav aria-label="Menu chính">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+            <li><a href="developer.html" class="nav-link active">Developer &amp; Apps</a></li>
+            <li><a href="cv-vi.html" class="nav-link">CV (Tiếng Việt)</a></li>
+            <li><a href="cv-en.html" class="nav-link">CV (English)</a></li>
+          </ul>
+        </nav>
+
+        <!-- Dark Mode Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Chuyển đổi giao diện Sáng/Tối" title="Chuyển đổi giao diện">
+          🌙
+        </button>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Mở menu điều hướng" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN CONTENT: DEVELOPER SHOWCASE
+       ======================================================================== -->
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- DEVELOPER INTRO SECTION -->
+      <section class="developer-intro reveal" aria-labelledby="dev-intro-heading">
+        <h1 id="dev-intro-heading" class="section-title">Nhà Phát Triển Ứng Dụng Di Động</h1>
+        <p class="section-desc">
+          Tập trung vào trải nghiệm cuộn mượt 120fps, kiến trúc Clean Architecture dễ mở rộng, tích hợp phần cứng chuyên dụng và phát hành ứng dụng ổn định lên Google Play Store.
+        </p>
+      </section>
+
+      <!-- SECTION: PUBLISHED APPS & PROJECTS -->
+      <section class="apps-section" aria-labelledby="apps-heading">
+        <h2 id="apps-heading" class="section-title reveal">Ứng Dụng Đã Xuất Bản &amp; Tiêu Biểu</h2>
+        <p class="section-desc reveal">Danh sách các sản phẩm và ứng dụng di động được nghiên cứu, phát triển và tối ưu thực tế</p>
+
+        <div class="card-grid">
+
+          <!-- APP CARD 1 -->
+          <!-- EDITABLE: Dự án NailMatch -->
+          <article class="app-card reveal">
+            <div class="app-card-top">
+              <div class="card-icon" aria-hidden="true">💅</div>
+              <span class="badge badge-crossplatform">Cross-platform</span>
+            </div>
+            <h3 class="app-title">NailMatch (ShopNail)</h3>
+            <p class="app-desc">
+              Ứng dụng gợi ý mẫu nail nghệ thuật ứng dụng thị giác máy tính AI (MediaPipe + ResNet-18) với độ trễ &lt;50ms qua pgvector HNSW. Tối ưu bộ nhớ đệm 3 tầng đạt chuẩn 120fps và triệt tiêu trùng lịch bằng PostgreSQL Exclusion Constraints.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">pgvector</span>
+            </div>
+            <div class="app-card-actions">
+              <!-- EDITABLE: Link Play Store cho NailMatch (thay bằng link thực tế của bạn) -->
+              <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                ▶ Google Play
+              </a>
+              <!-- EDITABLE: Link GitHub repo -->
+              <a href="https://github.com/shopnail/shopnail" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- APP CARD 2 -->
+          <!-- EDITABLE: Dự án NewsWave -->
+          <article class="app-card reveal">
+            <div class="app-card-top">
+              <div class="card-icon" aria-hidden="true">📰</div>
+              <span class="badge badge-crossplatform">Cross-platform</span>
+            </div>
+            <h3 class="app-title">NewsWave Mobile</h3>
+            <p class="app-desc">
+              Ứng dụng đọc báo ngoại tuyến tức thì (Offline-first) với bộ nhớ cục bộ Hive. Áp dụng Clean Architecture 3 tầng, BLoC 9.0 và bộ kiểm thử tự động TDD toàn diện với 14 file test (~2.200 LOC) bao phủ Unit, BLoC và Widget test.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Clean Architecture</span>
+              <span class="tag">BLoC 9.0</span>
+              <span class="tag">Hive</span>
+              <span class="tag">TDD</span>
+            </div>
+            <div class="app-card-actions">
+              <!-- EDITABLE: Link Play Store cho NewsWave -->
+              <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                ▶ Google Play
+              </a>
+              <a href="https://github.com/huypham200104/NewsWave" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- APP CARD 3 -->
+          <!-- EDITABLE: Dự án FG-Kho PDA -->
+          <article class="app-card reveal">
+            <div class="app-card-top">
+              <div class="card-icon" aria-hidden="true">📦</div>
+              <span class="badge badge-android">Android</span>
+            </div>
+            <h3 class="app-title">FG-Kho PDA Warehouse</h3>
+            <p class="app-desc">
+              Ứng dụng chuyên dụng cho máy cầm tay Android PDA (Honeywell, Zebra) trong quản lý kho bãi. Tích hợp súng quét Laser qua Broadcast Intent giảm 80% thao tác quét, đàm thoại video WebRTC LiveKit thời gian thực &lt;500ms.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">React Native 0.86</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">LiveKit WebRTC</span>
+              <span class="tag">SignalR</span>
+              <span class="tag">PDA Scanner</span>
+            </div>
+            <div class="app-card-actions">
+              <!-- EDITABLE: Link Play Store / Internal APK -->
+              <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                ▶ Google Play
+              </a>
+              <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- APP CARD 4 -->
+          <!-- EDITABLE: Dự án E-Meeting App -->
+          <article class="app-card reveal">
+            <div class="app-card-top">
+              <div class="card-icon" aria-hidden="true">📋</div>
+              <span class="badge badge-crossplatform">Cross-platform</span>
+            </div>
+            <h3 class="app-title">E-Meeting &mdash; Họp Không Giấy Tờ</h3>
+            <p class="app-desc">
+              Ứng dụng quản trị lịch họp doanh nghiệp bảo mật cao với luồng xác thực OAuth 2.0 PKCE SSO, cơ chế ngăn chặn chụp màn hình bảo vệ tài liệu mật và pipeline Fastlane + GitHub Actions rút ngắn chu kỳ build xuống &lt;20 phút.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">OAuth 2.0 PKCE</span>
+              <span class="tag">Fastlane</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+            <div class="app-card-actions">
+              <!-- EDITABLE: Link Play Store -->
+              <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                ▶ Google Play
+              </a>
+              <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                GitHub
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECTION: TECH STACK BADGES -->
+      <section class="tech-stack-section" aria-labelledby="tech-heading">
+        <h2 id="tech-heading" class="section-title reveal">Kỹ Năng &amp; Công Nghệ Sử Dụng</h2>
+        <p class="section-desc reveal">Hệ sinh thái kỹ thuật từ lập trình di động đến hạ tầng backend</p>
+
+        <div class="tech-cluster-grid">
+          
+          <!-- MOBILE CLUSTER -->
+          <div class="tech-cluster-card reveal">
+            <h3>📱 Lập Trình Di Động (Mobile)</h3>
+            <div class="tech-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">React Native</span>
+              <span class="tag">Dart</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Kotlin</span>
+              <span class="tag">Java</span>
+              <span class="tag">Swift Basics</span>
+              <span class="tag">Android SDK</span>
+              <span class="tag">iOS Deployment</span>
+            </div>
+          </div>
+
+          <!-- ARCHITECTURE CLUSTER -->
+          <div class="tech-cluster-card reveal">
+            <h3>🏛️ Kiến Trúc &amp; Trạng Thái</h3>
+            <div class="tech-tags">
+              <span class="tag">Clean Architecture</span>
+              <span class="tag">SOLID</span>
+              <span class="tag">Domain-Driven Design (DDD)</span>
+              <span class="tag">BLoC / Cubit</span>
+              <span class="tag">Zustand 5</span>
+              <span class="tag">TanStack Query 5</span>
+              <span class="tag">Offline-first (Hive)</span>
+            </div>
+          </div>
+
+          <!-- BACKEND & REAL-TIME CLUSTER -->
+          <div class="tech-cluster-card reveal">
+            <h3>⚡ Backend &amp; Real-time</h3>
+            <div class="tech-tags">
+              <span class="tag">.NET 8 (ASP.NET Core)</span>
+              <span class="tag">Python FastAPI</span>
+              <span class="tag">REST API</span>
+              <span class="tag">WebRTC (LiveKit)</span>
+              <span class="tag">SignalR WebSocket</span>
+              <span class="tag">Supabase</span>
+            </div>
+          </div>
+
+          <!-- DATABASE & DEVOPS CLUSTER -->
+          <div class="tech-cluster-card reveal">
+            <h3>🛠️ Cơ Sở Dữ Liệu &amp; DevOps</h3>
+            <div class="tech-tags">
+              <span class="tag">PostgreSQL (pgvector)</span>
+              <span class="tag">Microsoft SQL Server</span>
+              <span class="tag">Windows Server / IIS</span>
+              <span class="tag">Tailscale VPN</span>
+              <span class="tag">Fastlane</span>
+              <span class="tag">GitHub Actions CI/CD</span>
+              <span class="tag">TDD</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION: GITHUB & PROFILES CALLOUT -->
+      <section class="github-section reveal" aria-labelledby="github-heading">
+        <div class="github-callout">
+          <h2 id="github-heading" style="font-size: 1.5rem; font-weight: var(--font-bold); margin-bottom: var(--space-xs); color: var(--text-primary);">
+            Mã Nguồn Mở &amp; Hồ Sơ Kỹ Thuật
+          </h2>
+          <p>
+            Khám phá các repositories mã nguồn mở, dự án thử nghiệm và hồ sơ lập trình viên của tôi trên GitHub và Google Play Console.
+          </p>
+          <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+            <!-- EDITABLE: Link GitHub Profile -->
+            <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              ⭐ Xem GitHub Profile
+            </a>
+            <!-- EDITABLE: Link Google Play Developer Console -->
+            <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              📱 Google Play Console
+            </a>
+            <!-- EDITABLE: Link LinkedIn -->
+            <a href="https://www.linkedin.com/in/pham-ngoc-huy-29689b378/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              💼 Kết nối LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 &ndash; 2026 Phạm Ngọc Huy. Mọi quyền được bảo lưu.</p>
+      <p>Thiết kế bằng HTML5, CSS thuần &amp; Vanilla JavaScript &bull; Tối ưu cho GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <!-- Shared JavaScript Interaction Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>
