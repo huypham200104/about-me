@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDITABLE: Thay đổi tiêu đề và mô tả SEO cho trang web của bạn -->
+  <title>Phạm Ngọc Huy — Mobile Developer Portfolio</title>
+  <meta name="description" content="Website cá nhân của Phạm Ngọc Huy — Kỹ sư Lập trình Di động (Flutter & React Native), T-Shaped Fullstack Developer.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER & NAVIGATION BAR
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="Trang chủ Phạm Ngọc Huy">
+        <span class="brand-badge">PNH</span>
+        <!-- EDITABLE: Họ tên thương hiệu -->
+        <span>Phạm Ngọc Huy</span>
+      </a>
+
+      <div class="nav-controls">
+        <nav aria-label="Menu chính">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="nav-link active">Trang chủ</a></li>
+            <li><a href="developer.html" class="nav-link">Developer & Apps</a></li>
+            <li><a href="cv-vi.html" class="nav-link">CV (Tiếng Việt)</a></li>
+            <li><a href="cv-en.html" class="nav-link">CV (English)</a></li>
+          </ul>
+        </nav>
+
+        <!-- Dark Mode Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Chuyển đổi giao diện Sáng/Tối" title="Chuyển đổi giao diện">
+          🌙
+        </button>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Mở menu điều hướng" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN CONTENT
+       ======================================================================== -->
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- HERO SECTION -->
+      <section class="hero-section reveal" aria-labelledby="hero-title">
+        <!-- EDITABLE: Avatar placeholder dạng tròn với initials PNH -->
+        <div class="hero-avatar" aria-label="Avatar Phạm Ngọc Huy">PNH</div>
+        
+        <!-- EDITABLE: Tên và chức danh chính -->
+        <h1 id="hero-title" class="hero-title">Phạm Ngọc Huy</h1>
+        <p class="hero-subtitle">Mobile Developer (Flutter &amp; React Native)</p>
+        
+        <!-- EDITABLE: Đoạn giới thiệu ngắn 2-3 câu -->
+        <p class="hero-bio">
+          Chào bạn! Tôi là một Kỹ sư Lập trình Di động định hướng T-Shaped với đam mê xây dựng các ứng dụng đa nền tảng mượt mà (120fps), tối ưu phần cứng thiết bị chuyên dụng và tích hợp giải pháp thời gian thực. Với tư duy hệ thống vững chắc từ tầng Backend đến máy chủ Production, tôi luôn hướng tới các sản phẩm mang lại trải nghiệm tin cậy cho người dùng.
+        </p>
+
+        <!-- Call to Action Buttons -->
+        <div class="hero-cta">
+          <a href="developer.html" class="btn btn-primary">Khám phá Ứng dụng &amp; Dự án</a>
+          <a href="cv-vi.html" class="btn btn-outline">Xem Hồ Sơ Năng Lực (CV)</a>
+        </div>
+      </section>
+
+      <!-- MY HISTORY SECTION (VERTICAL TIMELINE) -->
+      <section class="timeline-section" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading" class="section-title reveal">Hành Trình &amp; Cột Mốc</h2>
+        <p class="section-desc reveal">Các mốc thời gian đánh dấu sự trưởng thành trong quá trình học tập và làm nghề</p>
+
+        <div class="timeline" role="list">
+          
+          <!-- TIMELINE ITEM 1 -->
+          <!-- EDITABLE: Mốc 2022 -->
+          <article class="timeline-item reveal" role="listitem">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-year">2022</span>
+                <h3 class="timeline-title">Bắt đầu học Kỹ thuật Phần mềm</h3>
+              </div>
+              <p class="timeline-desc">
+                Nhập học chuyên ngành Kỹ thuật Phần mềm tại Trường Đại học Công nghệ TP.HCM (HUTECH). Bắt đầu làm quen với tư duy lập trình cấu trúc, thuật toán và các kiến trúc phần mềm cốt lõi.
+              </p>
+            </div>
+          </article>
+
+          <!-- TIMELINE ITEM 2 -->
+          <!-- EDITABLE: Mốc 2024 -->
+          <article class="timeline-item reveal" role="listitem">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-year">2024</span>
+                <h3 class="timeline-title">Tiếp cận Mobile Đa nền tảng &amp; Xuất bản App</h3>
+              </div>
+              <p class="timeline-desc">
+                Chuyên sâu vào hệ sinh thái Flutter &amp; React Native. Tạo tài khoản Google Play Console và hoàn thiện quy trình đóng gói, ký số cũng như phát hành ứng dụng cá nhân đầu tiên lên Google Play Store.
+              </p>
+            </div>
+          </article>
+
+          <!-- TIMELINE ITEM 3 -->
+          <!-- EDITABLE: Mốc 2025 -->
+          <article class="timeline-item reveal" role="listitem">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-year">2025</span>
+                <h3 class="timeline-title">Nâng cao Ngoại ngữ &amp; Kiến trúc Ứng dụng</h3>
+              </div>
+              <p class="timeline-desc">
+                Đạt chứng chỉ TOEIC 570 (Reading &amp; Listening). Nghiên cứu sâu về Clean Architecture, BLoC Pattern, cơ sở dữ liệu ngoại tuyến (Offline-first với Hive) và phương pháp phát triển hướng kiểm thử TDD.
+              </p>
+            </div>
+          </article>
+
+          <!-- TIMELINE ITEM 4 -->
+          <!-- EDITABLE: Mốc 2026 / Hiện tại -->
+          <article class="timeline-item reveal" role="listitem">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-year">2026 — Hiện tại</span>
+                <h3 class="timeline-title">Thực tập sinh Fullstack — Công nghệ VPS</h3>
+              </div>
+              <p class="timeline-desc">
+                Tham gia phát triển ứng dụng di động cho thiết bị cầm tay Android PDA tại kho bãi, tích hợp súng quét mã Laser và đàm thoại video WebRTC LiveKit thời gian thực. Trực tiếp vận hành hạ tầng máy chủ Production Windows Server / IIS với quy trình phát hành Zero-Downtime.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- EDITABLE: Thông tin bản quyền footer -->
+      <p>&copy; 2024 — 2026 Phạm Ngọc Huy. Mọi quyền được bảo lưu.</p>
+      <p>Thiết kế bằng HTML5, CSS thuần &amp; Vanilla JavaScript &bull; Tối ưu cho GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <!-- Shared JavaScript Interaction Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>
