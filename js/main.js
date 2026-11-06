@@ -102,6 +102,21 @@
     const revealElements = document.querySelectorAll('.reveal');
     if (!revealElements.length) return;
 
+    function checkVisible(el) {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top <= windowHeight + 100 && rect.bottom >= -50) {
+        el.classList.add('is-visible');
+        return true;
+      }
+      return false;
+    }
+
+    // Immediately reveal elements that are already within or near the viewport
+    revealElements.forEach(function (el) {
+      checkVisible(el);
+    });
+
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(
         function (entries, obs) {
@@ -113,19 +128,38 @@
           });
         },
         {
-          threshold: 0.12,
-          rootMargin: '0px 0px -30px 0px'
+          threshold: 0.01,
+          rootMargin: '80px 0px 80px 0px'
         }
       );
 
       revealElements.forEach(function (el) {
-        observer.observe(el);
+        if (!el.classList.contains('is-visible')) {
+          observer.observe(el);
+        }
       });
     } else {
       revealElements.forEach(function (el) {
         el.classList.add('is-visible');
       });
     }
+
+    // Safety listener: Reveal elements on scroll or anchor navigation
+    window.addEventListener('scroll', function () {
+      revealElements.forEach(function (el) {
+        if (!el.classList.contains('is-visible')) {
+          checkVisible(el);
+        }
+      });
+    }, { passive: true });
+
+    window.addEventListener('hashchange', function () {
+      setTimeout(function () {
+        revealElements.forEach(function (el) {
+          checkVisible(el);
+        });
+      }, 100);
+    });
   }
 
   /* ------------------------------------------------------------------------

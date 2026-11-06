@@ -1042,10 +1042,6 @@ button {
   margin-top: var(--space-sm);
   font-style: italic;
 }
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 .feature-grid {
   display: grid;
