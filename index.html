@@ -141,20 +141,19 @@
           </div>
         </article>
 
-        <!-- APP 2: ENTERPRISE WMS PDA & WEBRTC LIVEKIT -->
+        <!-- APP 2: ỨNG DỤNG QUẢN LÝ KHO (ENTERPRISE - NDA COMPLIANT) -->
         <article class="home-app-card reveal">
           <div class="home-app-header">
             <div class="home-app-identity">
-              <div style="width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, #1976D2, #0D47A1); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FFFFFF; box-shadow: var(--card-shadow); flex-shrink: 0;">
+              <div style="width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, #0288D1, #01579B); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FFFFFF; box-shadow: var(--card-shadow); flex-shrink: 0;">
                 📦
               </div>
               <div class="home-app-info">
-                <h3 class="home-app-title">📦 WMS Warehouse PDA &amp; Video Call Realtime</h3>
+                <h3 class="home-app-title">📦 Ứng Dụng Quản Lý Kho</h3>
                 <div class="home-app-badges">
-                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Dự Án Doanh Nghiệp</span>
+                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Dự Án Doanh Nghiệp (VPS)</span>
                   <span class="badge badge-android">Android PDA</span>
-                  <span class="badge" style="background-color: #6A1B9A; color: #FFFFFF;">WebRTC LiveKit</span>
-                  <span class="badge" style="background-color: #EF6C00; color: #FFFFFF;">Laser Intent Scanner</span>
+                  <span class="badge" style="background-color: #455A64; color: #FFFFFF;">Bảo Mật Nội Bộ</span>
                 </div>
               </div>
             </div>
@@ -166,44 +165,98 @@
           </div>
 
           <p class="home-app-desc">
-            Ứng dụng di động chuyên dụng cho thiết bị cầm tay Android PDA tại kho bãi của <strong>Công ty TNHH Công nghệ và Dịch vụ VPS</strong>. Tối ưu tác nghiệp xuất nhập kho, kết nối súng quét Laser vật lý qua Broadcast Intent giúp giảm hơn <strong>80% thao tác thủ công</strong>; tích hợp <strong>LiveKit WebRTC SFU</strong> và SignalR duy trì cuộc gọi Audio/Video độ trễ <strong>&lt;500ms</strong> xử lý tức thời sự cố hiện trường; kết nối Backend .NET 8 và máy chủ Production Windows Server / IIS Zero-Downtime.
+            Giải pháp ứng dụng di động tác nghiệp kho bãi dành cho thiết bị cầm tay Android PDA công nghiệp. Hệ thống tập trung tối ưu hóa tốc độ xuất/nhập/kiểm kê hàng hóa, kết nối trực tiếp với súng quét mã Laser vật lý và giải quyết sự cố hiện trường theo thời gian thực.
           </p>
 
-          <div class="wms-showcase-grid">
-            <div class="wms-preview-frame">
-              <img src="assets/wms-pda/pda-scanner-preview.png" alt="Giao diện PDA quét mã xuất kho picking" loading="lazy">
-            </div>
-            <div>
-              <ul class="wms-feature-list">
-                <li class="wms-feature-item">
-                  <span class="wms-feature-icon">⚡</span>
-                  <div><strong>Quét Laser Siêu Tốc:</strong> Bắt sự kiện quét mã vạch phần cứng qua Broadcast Intent, khử độ trễ và hỗ trợ quét liên tục hàng trăm mã vạch pallet không lỗi.</div>
-                </li>
-                <li class="wms-feature-item">
-                  <span class="wms-feature-icon">📹</span>
-                  <div><strong>Đàm Thoại Video Hiện Trường:</strong> LiveKit WebRTC SFU đàm thoại đa bên sắc nét, hỗ trợ chia sẻ hình ảnh pallet lỗi trực tiếp cho quản lý kho bãi.</div>
-                </li>
-                <li class="wms-feature-item">
-                  <span class="wms-feature-icon">🏛️</span>
-                  <div><strong>Backend .NET 8 &amp; Angular:</strong> Kiến trúc Clean Architecture xử lý dồn pallet tự động (Auto-Merge) và giao diện Web điều phối linh hoạt.</div>
-                </li>
-                <li class="wms-feature-item">
-                  <span class="wms-feature-icon">🚀</span>
-                  <div><strong>Vận Hành Zero-Downtime:</strong> Quản trị triển khai máy chủ Windows Server / IIS, bảo mật Tailscale VPN và tường lửa Windows Defender 24/7.</div>
-                </li>
-              </ul>
+          <ul class="wms-feature-list">
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">⚡</span>
+              <div><strong>Quét mã Laser phần cứng siêu tốc:</strong> Tích hợp súng quét Laser Android PDA qua Android Broadcast Intent, giảm hơn <strong>80% thao tác quét thủ công</strong>, xử lý quét liên tục hàng trăm mã vạch pallet không độ trễ.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">📹</span>
+              <div><strong>Đàm thoại Audio/Video hiện trường:</strong> Tích hợp <strong>LiveKit WebRTC SFU</strong> và SignalR Hub duy trì cuộc gọi đa bên thời gian thực với độ trễ <strong>&lt;500ms</strong>, hỗ trợ nhân viên kho xử lý tức thời các vấn đề pallet lỗi.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">🏛️</span>
+              <div><strong>Backend Clean Architecture &amp; Auto-Merge:</strong> Xây dựng API Backend .NET 8 theo mô hình Clean Architecture xử lý đường ống tra cứu tập trung và thuật toán dồn pallet tự động; đồng bộ Web điều phối Angular Standalone.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">🚀</span>
+              <div><strong>Vận hành Zero-Downtime:</strong> Trực tiếp cấu hình và vận hành quy trình phát hành dịch vụ không gián đoạn trên cụm máy chủ <strong>Windows Server / IIS</strong>, bảo vệ an ninh mạng với Tailscale VPN và tường lửa 24/7.</div>
+            </li>
+          </ul>
 
-              <!-- Tech Tags -->
-              <div class="tech-tags" style="margin-top: var(--space-md);">
-                <span class="tag">React Native 0.86</span>
-                <span class="tag">React 19</span>
-                <span class="tag">WebRTC LiveKit</span>
-                <span class="tag">SignalR Hub</span>
-                <span class="tag">.NET 8 Clean Architecture</span>
-                <span class="tag">Windows Server / IIS</span>
-                <span class="tag">Tailscale VPN</span>
+          <!-- Tech Tags -->
+          <div class="tech-tags" style="margin-top: var(--space-md);">
+            <span class="tag">React Native 0.86</span>
+            <span class="tag">React 19</span>
+            <span class="tag">Android PDA Intent</span>
+            <span class="tag">LiveKit WebRTC SFU</span>
+            <span class="tag">SignalR Hub</span>
+            <span class="tag">.NET 8 Web API</span>
+            <span class="tag">Angular Standalone</span>
+            <span class="tag">Windows Server / IIS</span>
+            <span class="tag">Tailscale VPN</span>
+          </div>
+        </article>
+
+        <!-- APP 3: ỨNG DỤNG QUẢN LÝ LỊCH HỌP (ENTERPRISE - NDA COMPLIANT) -->
+        <article class="home-app-card reveal">
+          <div class="home-app-header">
+            <div class="home-app-identity">
+              <div style="width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, #7B1FA2, #4A148C); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FFFFFF; box-shadow: var(--card-shadow); flex-shrink: 0;">
+                📅
+              </div>
+              <div class="home-app-info">
+                <h3 class="home-app-title">📅 Ứng Dụng Quản Lý Lịch Họp</h3>
+                <div class="home-app-badges">
+                  <span class="badge" style="background-color: #7B1FA2; color: #FFFFFF;">Dự Án Doanh Nghiệp (VPS)</span>
+                  <span class="badge" style="background-color: #2E7D32; color: #FFFFFF;">iOS &amp; Android</span>
+                  <span class="badge" style="background-color: #455A64; color: #FFFFFF;">Bảo Mật Nội Bộ</span>
+                </div>
               </div>
             </div>
+            <div class="home-app-actions">
+              <a href="#timeline-section" class="btn btn-outline" title="Xem cột mốc kinh nghiệm tại Công nghệ VPS">
+                Xem Kinh Nghiệm VPS &rarr;
+              </a>
+            </div>
+          </div>
+
+          <p class="home-app-desc">
+            Ứng dụng di động quản lý và điều phối lịch họp số, lịch công tác và phòng họp thông minh dành cho doanh nghiệp. Ứng dụng tập trung vào tính bảo mật dữ liệu cấp cao và tối ưu hóa quy trình đóng gói phân phối tự động.
+          </p>
+
+          <ul class="wms-feature-list">
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">🛡️</span>
+              <div><strong>Xác thực tập trung OAuth 2.0 PKCE SSO:</strong> Triển khai quy trình đăng nhập bảo mật một lần SSO (Single Sign-On) theo chuẩn OAuth 2.0 với luồng Proof Key for Code Exchange (PKCE), đồng bộ quyền hạn người dùng tức thời.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">🔒</span>
+              <div><strong>Chống rò rỉ tài liệu mật (Anti-Screen Capture):</strong> Tích hợp cơ chế bảo mật hệ thống ngăn chặn hành vi chụp ảnh màn hình (Screenshot Blocking) và quay video màn hình trên cả iOS &amp; Android để bảo vệ an toàn tài liệu họp bí mật.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">⚡</span>
+              <div><strong>Đồng bộ lịch &amp; Nhắc việc thời gian thực:</strong> Tối ưu luồng dữ liệu thông báo đẩy và đồng bộ trạng thái phòng họp, lịch làm việc đa thiết bị mượt mà không xung đột giờ họp.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">🚀</span>
+              <div><strong>CI/CD tự động hóa lên Apple TestFlight:</strong> Thiết lập toàn diện đường ống tự động với <strong>Fastlane + GitHub Actions</strong>, rút ngắn chu kỳ build, ký số và phát hành lên <strong>Apple TestFlight</strong> từ 2 ngày xuống <strong>&lt;20 phút</strong>.</div>
+            </li>
+          </ul>
+
+          <!-- Tech Tags -->
+          <div class="tech-tags" style="margin-top: var(--space-md);">
+            <span class="tag">React Native 0.71</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">OAuth 2.0 PKCE SSO</span>
+            <span class="tag">Screen Capture Protection</span>
+            <span class="tag">Fastlane CI/CD</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Apple TestFlight</span>
+            <span class="tag">iOS &amp; Android</span>
           </div>
         </article>
       </section>
