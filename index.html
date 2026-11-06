@@ -56,7 +56,9 @@
       
       <!-- HERO SECTION -->
       <section class="hero-section reveal" aria-labelledby="hero-title">
-        <div class="hero-avatar" aria-label="Avatar Phạm Ngọc Huy">PNH</div>
+        <div class="hero-avatar" aria-label="Avatar Phạm Ngọc Huy">
+          <img src="assets/avatar.JPG" alt="Phạm Ngọc Huy" class="hero-avatar-img">
+        </div>
         
         <h1 id="hero-title" class="hero-title">Phạm Ngọc Huy</h1>
         <p class="hero-subtitle">Mobile Developer (Flutter &amp; React Native) &bull; T-Shaped Engineer</p>
@@ -81,7 +83,7 @@
         <p class="section-desc reveal">Các sản phẩm di động thực tế đã phát hành trên Google Play Store và hệ thống giải pháp doanh nghiệp</p>
 
         <!-- APP 1: GPLX A1 - 200 CÂU (CH PLAY) -->
-        <article class="home-app-card reveal">
+        <article id="app-gplx" class="home-app-card reveal">
           <div class="home-app-header">
             <div class="home-app-identity">
               <img src="assets/tracnghiemlaixea1/icon_512x512.png" alt="Icon GPLX A1 - 200 Câu" class="home-app-icon">
@@ -141,8 +143,135 @@
           </div>
         </article>
 
-        <!-- APP 2: ỨNG DỤNG QUẢN LÝ KHO (ENTERPRISE - NDA COMPLIANT) -->
-        <article class="home-app-card reveal">
+        <!-- APP 2: NAILMATCH (SHOPNAIL) — AI VISION & 120FPS BOOKING -->
+        <article id="app-nailmatch" class="home-app-card reveal">
+          <div class="home-app-header">
+            <div class="home-app-identity">
+              <img src="assets/nailmatch/logo.png" alt="Logo NailMatch" class="home-app-icon">
+              <div class="home-app-info">
+                <h3 class="home-app-title">💅 NailMatch (ShopNail)</h3>
+                <div class="home-app-badges">
+                  <span class="badge" style="background-color: #E91E63; color: #FFFFFF;">AI Computer Vision</span>
+                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Flutter 3.8+</span>
+                  <span class="badge" style="background-color: #2E7D32; color: #FFFFFF;">120fps Scrolling</span>
+                  <span class="badge" style="background-color: #6A1B9A; color: #FFFFFF;">pgvector 512d</span>
+                </div>
+              </div>
+            </div>
+            <div class="home-app-actions">
+              <a href="https://github.com/shopnail/shopnail" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="Xem kho mã nguồn NailMatch trên GitHub">
+                🐙 GitHub Repo
+              </a>
+            </div>
+          </div>
+
+          <p class="home-app-desc">
+            Hệ sinh thái công nghệ kết nối Khách hàng, Thợ nail (Nail Artist) và Salon; giải quyết bài toán tìm thợ làm đúng mẫu móng theo ảnh khách chụp thông qua <strong>AI thị giác máy tính</strong>, đặt lịch chống trùng tuyệt đối và tối ưu cuộn mượt mà <strong>120fps</strong>.
+          </p>
+
+          <!-- Banner Preview -->
+          <div class="app-banner-container" style="max-height: 320px; overflow: hidden; border-radius: var(--border-radius-md); margin-bottom: var(--space-lg);">
+            <img src="assets/nailmatch/nail_match_hero.jpg" alt="Banner NailMatch AI &amp; Booking" style="width: 100%; height: auto; object-fit: cover;" loading="lazy">
+          </div>
+
+          <ul class="wms-feature-list">
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">⚡</span>
+              <div><strong>Kiến trúc bộ nhớ đệm 3 tầng (3-Tier Cache) đạt 120fps:</strong> Tinh chỉnh `PaintingBinding.imageCache` với Dynamic Downsampling theo khung nhìn hiển thị, kết hợp bộ đệm đĩa `Disk LRU` và `Hive NoSQL SWR`, giúp **cắt giảm hơn 65% áp lực RAM đồ họa** và triệt tiêu hoàn toàn rủi ro tràn bộ nhớ (OOM).</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">👁️</span>
+              <div><strong>Pipeline thị giác máy tính AI nhận diện móng tay:</strong> Kết hợp mô hình <strong>MediaPipe Hands</strong> (định vị 21 điểm mốc bàn tay) và mạng nơ-ron <strong>PyTorch ResNet-18</strong> trích xuất vector đặc trưng 512 chiều, so khớp tương đồng Cosine qua chỉ mục <strong>pgvector HNSW</strong> trên PostgreSQL trong <strong>&lt;100ms</strong>.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">🔒</span>
+              <div><strong>Triệt tiêu xung đột trùng lịch tuyệt đối:</strong> Giải quyết triệt để bài toán Race Condition ở tầng cơ sở dữ liệu bằng <strong>PostgreSQL Exclusion Constraints</strong> (`btree_gist` kết hợp `tstzrange`), ngăn chặn 100% lỗi Double-Booking khi hàng trăm người dùng cùng đặt lịch trong một tích tắc.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">🔔</span>
+              <div><strong>Hệ thống nhắc hẹn lai 100% Offline:</strong> Lập lịch nhắc hẹn trực tiếp vào <strong>OS AlarmManager (Android)</strong> và <strong>UNUserNotificationCenter (iOS)</strong>, vận hành độc lập không cần Internet và giảm 100% tải quét định kỳ của máy chủ.</div>
+            </li>
+          </ul>
+
+          <!-- Tech Tags -->
+          <div class="tech-tags" style="margin-top: var(--space-md);">
+            <span class="tag">Flutter 3.8+</span>
+            <span class="tag">Riverpod 2.6</span>
+            <span class="tag">Hive 2.2</span>
+            <span class="tag">Python FastAPI</span>
+            <span class="tag">PyTorch ResNet-18</span>
+            <span class="tag">MediaPipe Hands</span>
+            <span class="tag">PostgreSQL pgvector</span>
+            <span class="tag">PostGIS</span>
+            <span class="tag">Angular 22</span>
+            <span class="tag">.NET 10</span>
+          </div>
+        </article>
+
+        <!-- APP 3: DEVMIND AI — QUIZ PLATFORM & AI CV SCANNER -->
+        <article id="app-devmind" class="home-app-card reveal">
+          <div class="home-app-header">
+            <div class="home-app-identity">
+              <img src="assets/devmind/logo_app.jpg" alt="Logo DevMind AI" class="home-app-icon">
+              <div class="home-app-info">
+                <h3 class="home-app-title">🧠 DevMind AI</h3>
+                <div class="home-app-badges">
+                  <span class="badge" style="background-color: #673AB7; color: #FFFFFF;">AI Quiz &amp; CV Scanner</span>
+                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Flutter 3.8+</span>
+                  <span class="badge" style="background-color: #FF8F00; color: #FFFFFF;">Firebase BaaS</span>
+                  <span class="badge" style="background-color: #00897B; color: #FFFFFF;">VietQR Payment</span>
+                </div>
+              </div>
+            </div>
+            <div class="home-app-actions">
+              <a href="https://github.com/huypham200104/DevMind" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="Xem kho mã nguồn DevMind trên GitHub">
+                🐙 GitHub Repo
+              </a>
+              <a href="https://drive.google.com/file/d/1m7pVKEESQqtJNayxyOiDgDnJh1Ff2XEq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Xem Video Demo ứng dụng thực tế trên Google Drive">
+                ▶ Video Demo (Drive)
+              </a>
+            </div>
+          </div>
+
+          <p class="home-app-desc">
+            Nền tảng di động luyện thi phỏng vấn kỹ thuật và quét đánh giá CV lập trình viên tự động bằng <strong>AI</strong>, tích hợp mô hình ví tín dụng (Credits) và cổng thanh toán <strong>VietQR</strong> tự động hóa.
+          </p>
+
+          <ul class="wms-feature-list">
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">⏱️</span>
+              <div><strong>Bộ đếm giờ thi 60fps mượt mà:</strong> Cô lập luồng tick thời gian thực bằng <code>ValueNotifier</code> kết hợp <code>ValueListenableBuilder</code>, loại bỏ 100% hiện tượng giật khung hình (Jank) do render lại toàn màn hình mỗi giây.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">📄</span>
+              <div><strong>Trích xuất PDF trên thiết bị giảm hơn 90% payload:</strong> Xử lý đọc văn bản PDF trực tiếp trên máy bằng <code>syncfusion_flutter_pdf</code> trước khi đẩy lên Firebase Cloud Functions cho AI phân tích CV, tiết kiệm tối đa chi phí đám mây và băng thông mạng.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">🏛️</span>
+              <div><strong>Kiến trúc Feature-First chuẩn SOLID (SRP):</strong> Tách controller nguyên khối thành 3 module độc lập (Catalog, Credits, Session) với lifecycle hook <code>Scoped Provider</code> tự động giải phóng bộ nhớ khi thoát màn hình.</div>
+            </li>
+            <li class="wms-feature-item">
+              <span class="wms-feature-icon">💳</span>
+              <div><strong>Ví điểm tín dụng &amp; Thanh toán VietQR động:</strong> Tích hợp mô hình ví điểm tín dụng AI hỗ trợ điểm danh nhận thưởng hàng ngày, đồng thời sinh mã VietQR động với cú pháp định danh đối soát an toàn qua Cloud Functions.</div>
+            </li>
+          </ul>
+
+          <!-- Tech Tags -->
+          <div class="tech-tags" style="margin-top: var(--space-md);">
+            <span class="tag">Flutter 3.8+</span>
+            <span class="tag">Dart 3.x</span>
+            <span class="tag">Firebase Auth &amp; Firestore</span>
+            <span class="tag">Cloud Functions</span>
+            <span class="tag">Provider State</span>
+            <span class="tag">ValueNotifier</span>
+            <span class="tag">syncfusion_flutter_pdf</span>
+            <span class="tag">VietQR Gateway</span>
+            <span class="tag">GoRouter</span>
+          </div>
+        </article>
+
+        <!-- APP 4: ỨNG DỤNG QUẢN LÝ KHO (ENTERPRISE - NDA COMPLIANT) -->
+        <article id="app-wms" class="home-app-card reveal">
           <div class="home-app-header">
             <div class="home-app-identity">
               <div style="width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, #0288D1, #01579B); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FFFFFF; box-shadow: var(--card-shadow); flex-shrink: 0;">
@@ -201,8 +330,8 @@
           </div>
         </article>
 
-        <!-- APP 3: ỨNG DỤNG QUẢN LÝ LỊCH HỌP (ENTERPRISE - NDA COMPLIANT) -->
-        <article class="home-app-card reveal">
+        <!-- APP 5: ỨNG DỤNG QUẢN LÝ LỊCH HỌP (ENTERPRISE - NDA COMPLIANT) -->
+        <article id="app-meeting" class="home-app-card reveal">
           <div class="home-app-header">
             <div class="home-app-identity">
               <div style="width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, #7B1FA2, #4A148C); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FFFFFF; box-shadow: var(--card-shadow); flex-shrink: 0;">
@@ -273,6 +402,7 @@
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-card">
               <div class="timeline-header">
+                <span class="timeline-badge" aria-hidden="true">🎓</span>
                 <span class="timeline-year">2022</span>
                 <h3 class="timeline-title">Bắt đầu học Kỹ thuật Phần mềm</h3>
               </div>
@@ -287,20 +417,53 @@
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-card">
               <div class="timeline-header">
+                <span class="timeline-badge" aria-hidden="true">🚀</span>
                 <span class="timeline-year">2024</span>
-                <h3 class="timeline-title">Tiếp cận Mobile Đa nền tảng &amp; Xuất bản App</h3>
+                <h3 class="timeline-title">Tiếp cận Mobile Đa nền tảng &amp; Xuất bản App Google Play</h3>
               </div>
               <p class="timeline-desc">
                 Chuyên sâu vào hệ sinh thái Flutter &amp; React Native. Tạo tài khoản Google Play Console và hoàn thiện quy trình đóng gói, ký số cũng như phát hành ứng dụng cá nhân đầu tiên lên Google Play Store.
               </p>
+              <div class="timeline-project-chips">
+                <a href="#app-gplx" class="timeline-chip" title="Xem chi tiết ứng dụng Trắc Nghiệm GPLX A1">
+                  <img src="assets/tracnghiemlaixea1/icon_512x512.png" alt="Icon Trắc Nghiệm GPLX A1" class="timeline-chip-img">
+                  Trắc Nghiệm GPLX A1 (Google Play)
+                </a>
+              </div>
             </div>
           </article>
 
-          <!-- TIMELINE ITEM 3: 2025 -->
+          <!-- TIMELINE ITEM 3: 2025 (NAILMATCH & DEVMIND AI) -->
           <article class="timeline-item reveal" role="listitem">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-card">
               <div class="timeline-header">
+                <span class="timeline-badge" aria-hidden="true">💡</span>
+                <span class="timeline-year">2025</span>
+                <h3 class="timeline-title">Phát triển Hệ sinh thái NailMatch &amp; Nền tảng DevMind AI</h3>
+              </div>
+              <p class="timeline-desc">
+                Nghiên cứu &amp; hoàn thiện 2 giải pháp công nghệ nổi bật: NailMatch (ShopNail) ứng dụng thị giác máy tính AI kết hợp tìm kiếm vector 512 chiều, giải quyết trùng lịch và tối ưu cuộn 120fps; cùng DevMind AI với tính năng chấm điểm CV và bộ đếm giờ luyện thi 60fps.
+              </p>
+              <div class="timeline-project-chips">
+                <a href="#app-nailmatch" class="timeline-chip" title="Xem chi tiết ứng dụng NailMatch">
+                  <img src="assets/nailmatch/logo.png" alt="Logo NailMatch" class="timeline-chip-img">
+                  NailMatch (ShopNail) AI &amp; Booking
+                </a>
+                <a href="#app-devmind" class="timeline-chip" title="Xem chi tiết ứng dụng DevMind AI">
+                  <img src="assets/devmind/logo_app.jpg" alt="Logo DevMind AI" class="timeline-chip-img">
+                  DevMind AI Quiz &amp; CV Scanner
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- TIMELINE ITEM 4: 2025 (TOEIC & CLEAN ARCHITECTURE) -->
+          <article class="timeline-item reveal" role="listitem">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <span class="timeline-badge" aria-hidden="true">🏛️</span>
                 <span class="timeline-year">2025</span>
                 <h3 class="timeline-title">Nâng cao Ngoại ngữ &amp; Kiến trúc Ứng dụng</h3>
               </div>
@@ -310,17 +473,26 @@
             </div>
           </article>
 
-          <!-- TIMELINE ITEM 4: 2026 -->
+          <!-- TIMELINE ITEM 5: 2026 -->
           <article class="timeline-item reveal" role="listitem">
             <span class="timeline-dot" aria-hidden="true"></span>
             <div class="timeline-card">
               <div class="timeline-header">
+                <span class="timeline-badge" aria-hidden="true">💼</span>
                 <span class="timeline-year">2026 — Hiện tại</span>
                 <h3 class="timeline-title">Thực tập sinh Fullstack — Công nghệ VPS</h3>
               </div>
               <p class="timeline-desc">
                 Tham gia phát triển ứng dụng di động cho thiết bị cầm tay Android PDA tại kho bãi, tích hợp súng quét mã Laser và đàm thoại video WebRTC LiveKit thời gian thực. Trực tiếp vận hành hạ tầng máy chủ Production Windows Server / IIS với quy trình phát hành Zero-Downtime.
               </p>
+              <div class="timeline-project-chips">
+                <a href="#app-wms" class="timeline-chip" title="Xem giải pháp Ứng dụng Quản lý kho">
+                  <span aria-hidden="true">📦</span> Ứng dụng Quản lý kho (Android PDA)
+                </a>
+                <a href="#app-meeting" class="timeline-chip" title="Xem giải pháp Ứng dụng Quản lý lịch họp">
+                  <span aria-hidden="true">📅</span> Ứng dụng Quản lý lịch họp Doanh nghiệp
+                </a>
+              </div>
             </div>
           </article>
 
