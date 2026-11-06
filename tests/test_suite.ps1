@@ -116,12 +116,12 @@ if (-not $indexContent.Contains("developer.html") -or -not $devContent.Contains(
     Write-Host "✓ Reciprocal links between index.html and developer.html are verified" -ForegroundColor Green
 }
 
-# 7. Check Integrated CV and Dual Drive links (VI & EN) in index.html
-if (-not $indexContent.Contains("cv-panel-vi") -or -not $indexContent.Contains("cv-panel-en")) {
-    Write-Error "FAIL: index.html missing integrated CV panels (VI and EN)"
+# 7. Check Modern CV Drive Card and Dual Drive links (VI & EN) in index.html
+if (-not $indexContent.Contains("cv-drive-card") -or -not $indexContent.Contains("btn-drive-cv")) {
+    Write-Error "FAIL: index.html missing modern CV Drive Card component"
     $allPassed = $false
 } else {
-    Write-Host "✓ Integrated CV panels in index.html verified" -ForegroundColor Green
+    Write-Host "✓ Modern CV Drive Card in index.html verified" -ForegroundColor Green
 }
 
 if (-not $indexContent.Contains("driveCvViUrl") -or -not $indexContent.Contains("driveCvEnUrl")) {
