@@ -9,11 +9,11 @@
 window.SITE_CONFIG = {
   // 1. Link file CV Tiếng Việt trên Google Drive (Dán link chia sẻ công khai vào đây):
   // Ví dụ: "https://drive.google.com/file/d/your-cv-vi-id/view?usp=sharing"
-  driveCvViUrl: "https://drive.google.com/",
+  driveCvViUrl: "",
 
   // 2. Link file CV Tiếng Anh (English) trên Google Drive:
   // Ví dụ: "https://drive.google.com/file/d/your-cv-en-id/view?usp=sharing"
-  driveCvEnUrl: "https://drive.google.com/",
+  driveCvEnUrl: "",
 
   // 3. Link ứng dụng GPLX A1 - 200 Câu trên Google Play Store (CH Play):
   playStoreUrl: "https://play.google.com/store/apps/details?id=vn.huypham.gplx.a1",

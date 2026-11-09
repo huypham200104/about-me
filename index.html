@@ -61,10 +61,10 @@
         </div>
         
         <h1 id="hero-title" class="hero-title">Phạm Ngọc Huy</h1>
-        <p class="hero-subtitle">Mobile Developer (Flutter &amp; React Native) &bull; T-Shaped Engineer</p>
+        <p class="hero-subtitle">Lập trình viên Fullstack &bull; Chuyên sâu Mobile (Flutter &amp; React Native)</p>
         
         <p class="hero-bio">
-          Chào bạn! Tôi là một Kỹ sư Lập trình Di động định hướng T-Shaped với đam mê xây dựng các ứng dụng đa nền tảng mượt mà (120fps), tối ưu phần cứng thiết bị chuyên dụng và tích hợp giải pháp thời gian thực. Với tư duy hệ thống vững chắc từ tầng Backend đến máy chủ Production, tôi luôn hướng tới các sản phẩm mang lại trải nghiệm tin cậy cho người dùng.
+          Chào bạn! Tôi là một Lập trình viên Fullstack với thiên hướng chuyên sâu về làm ứng dụng di động (<strong>Flutter</strong> và <strong>React Native</strong>), kết hợp nền tảng backend vững chắc. Tự chủ toàn diện vòng đời sản phẩm, từng trực tiếp đưa ứng dụng lên <strong>Google Play (CH Play)</strong> và thiết lập quy trình build, đóng gói ứng dụng iOS (<strong>Apple TestFlight</strong>); mong muốn vận dụng tư duy kiến trúc chuẩn mực để xây dựng sản phẩm ổn định, tối ưu và đóng góp thiết thực cho doanh nghiệp.
         </p>
 
         <!-- Call to Action Buttons -->
@@ -143,18 +143,22 @@
           </div>
         </article>
 
-        <!-- APP 2: NAILMATCH (SHOPNAIL) — AI VISION & 120FPS BOOKING -->
+        <!-- APP 2: NAILMATCH — AI COMPUTER VISION & REAL-TIME BOOKING -->
         <article id="app-nailmatch" class="home-app-card reveal">
           <div class="home-app-header">
             <div class="home-app-identity">
-              <img src="assets/nailmatch/logo.png" alt="Logo NailMatch" class="home-app-icon">
+              <div class="home-app-icon app-icon-squircle" style="background: linear-gradient(135deg, #F06292, #AD1457);" aria-label="Icon NailMatch">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"></path>
+                </svg>
+              </div>
               <div class="home-app-info">
-                <h3 class="home-app-title">💅 NailMatch (ShopNail)</h3>
+                <h3 class="home-app-title">💅 NailMatch</h3>
                 <div class="home-app-badges">
                   <span class="badge" style="background-color: #E91E63; color: #FFFFFF;">AI Computer Vision</span>
-                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Flutter 3.8+</span>
-                  <span class="badge" style="background-color: #2E7D32; color: #FFFFFF;">120fps Scrolling</span>
-                  <span class="badge" style="background-color: #6A1B9A; color: #FFFFFF;">pgvector 512d</span>
+                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Flutter</span>
+                  <span class="badge" style="background-color: #5C6BC0; color: #FFFFFF;">Riverpod</span>
+                  <span class="badge" style="background-color: #6A1B9A; color: #FFFFFF;">pgvector HNSW</span>
                 </div>
               </div>
             </div>
@@ -166,7 +170,7 @@
           </div>
 
           <p class="home-app-desc">
-            Hệ sinh thái công nghệ kết nối Khách hàng, Thợ nail (Nail Artist) và Salon; giải quyết bài toán tìm thợ làm đúng mẫu móng theo ảnh khách chụp thông qua <strong>AI thị giác máy tính</strong>, đặt lịch chống trùng tuyệt đối và tối ưu cuộn mượt mà <strong>120fps</strong>.
+            Hệ sinh thái công nghệ kết nối Khách hàng, Thợ nail (Nail Artist) và Salon; giải quyết bài toán tìm thợ làm đúng mẫu móng theo ảnh khách chụp thông qua <strong>AI thị giác máy tính</strong> và triệt tiêu lỗi trùng lịch đặt hẹn ở tầng cơ sở dữ liệu.
           </p>
 
           <!-- Banner Preview -->
@@ -176,35 +180,31 @@
 
           <ul class="wms-feature-list">
             <li class="wms-feature-item">
-              <span class="wms-feature-icon">⚡</span>
-              <div><strong>Kiến trúc bộ nhớ đệm 3 tầng (3-Tier Cache) đạt 120fps:</strong> Tinh chỉnh `PaintingBinding.imageCache` với Dynamic Downsampling theo khung nhìn hiển thị, kết hợp bộ đệm đĩa `Disk LRU` và `Hive NoSQL SWR`, giúp **cắt giảm hơn 65% áp lực RAM đồ họa** và triệt tiêu hoàn toàn rủi ro tràn bộ nhớ (OOM).</div>
+              <span class="wms-feature-icon">👁️</span>
+              <div><strong>Tìm kiếm mẫu móng tương đồng theo ảnh chụp:</strong> Dùng mô hình <strong>MediaPipe Hands</strong> định vị vùng móng kết hợp mô hình trích xuất vector đặc trưng và chỉ mục <strong>pgvector HNSW</strong> để giải quyết bài toán tìm kiếm mẫu móng tương đồng (Cosine Similarity) theo ảnh chụp thực tế của khách hàng.</div>
             </li>
             <li class="wms-feature-item">
-              <span class="wms-feature-icon">👁️</span>
-              <div><strong>Pipeline thị giác máy tính AI nhận diện móng tay:</strong> Kết hợp mô hình <strong>MediaPipe Hands</strong> (định vị 21 điểm mốc bàn tay) và mạng nơ-ron <strong>PyTorch ResNet-18</strong> trích xuất vector đặc trưng 512 chiều, so khớp tương đồng Cosine qua chỉ mục <strong>pgvector HNSW</strong> trên PostgreSQL trong <strong>&lt;100ms</strong>.</div>
+              <span class="wms-feature-icon">🎯</span>
+              <div><strong>Thuật toán gợi ý thợ nail thông minh:</strong> Xây dựng thuật toán xếp hạng đa tiêu chí kết hợp độ tương đồng thị giác, khoảng cách địa lý GPS qua <strong>PostGIS</strong> và đánh giá thực tế của khách hàng để giải quyết bài toán gợi ý thợ nail phù hợp nhất với từng phong cách và vị trí.</div>
             </li>
             <li class="wms-feature-item">
               <span class="wms-feature-icon">🔒</span>
-              <div><strong>Triệt tiêu xung đột trùng lịch tuyệt đối:</strong> Giải quyết triệt để bài toán Race Condition ở tầng cơ sở dữ liệu bằng <strong>PostgreSQL Exclusion Constraints</strong> (`btree_gist` kết hợp `tstzrange`), ngăn chặn 100% lỗi Double-Booking khi hàng trăm người dùng cùng đặt lịch trong một tích tắc.</div>
-            </li>
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">🔔</span>
-              <div><strong>Hệ thống nhắc hẹn lai 100% Offline:</strong> Lập lịch nhắc hẹn trực tiếp vào <strong>OS AlarmManager (Android)</strong> và <strong>UNUserNotificationCenter (iOS)</strong>, vận hành độc lập không cần Internet và giảm 100% tải quét định kỳ của máy chủ.</div>
+              <div><strong>Triệt tiêu xung đột trùng lịch đặt hẹn:</strong> Dùng <strong>PostgreSQL Exclusion Constraints</strong> (<code>btree_gist</code> kết hợp <code>tstzrange</code>) ở tầng cơ sở dữ liệu để giải quyết triệt để lỗi xung đột trùng lịch đặt hẹn (Race Condition / Double-Booking) khi nhiều khách hàng cùng thao tác trong một khung giờ.</div>
             </li>
           </ul>
 
           <!-- Tech Tags -->
           <div class="tech-tags" style="margin-top: var(--space-md);">
-            <span class="tag">Flutter 3.8+</span>
-            <span class="tag">Riverpod 2.6</span>
-            <span class="tag">Hive 2.2</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Riverpod</span>
+            <span class="tag">Dart</span>
             <span class="tag">Python FastAPI</span>
-            <span class="tag">PyTorch ResNet-18</span>
             <span class="tag">MediaPipe Hands</span>
             <span class="tag">PostgreSQL pgvector</span>
             <span class="tag">PostGIS</span>
-            <span class="tag">Angular 22</span>
-            <span class="tag">.NET 10</span>
+            <span class="tag">.NET</span>
+            <span class="tag">Angular</span>
+            <span class="tag">Supabase</span>
           </div>
         </article>
 
@@ -212,12 +212,18 @@
         <article id="app-devmind" class="home-app-card reveal">
           <div class="home-app-header">
             <div class="home-app-identity">
-              <img src="assets/devmind/logo_app.jpg" alt="Logo DevMind AI" class="home-app-icon">
+              <div class="home-app-icon app-icon-squircle" style="background: linear-gradient(135deg, #7C4DFF, #4527A0);" aria-label="Icon DevMind AI">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a8 8 0 0 0-8 8c0 3.4 2.1 6.3 5.1 7.4V19a2 2 0 0 0 2 2h1.8a2 2 0 0 0 2-2v-1.6c3-.1 5.1-3 5.1-7.4a8 8 0 0 0-8-8z"></path>
+                  <path d="M9 22h6"></path>
+                  <path d="m9 10 2 2 4-4"></path>
+                </svg>
+              </div>
               <div class="home-app-info">
                 <h3 class="home-app-title">🧠 DevMind AI</h3>
                 <div class="home-app-badges">
                   <span class="badge" style="background-color: #673AB7; color: #FFFFFF;">AI Quiz &amp; CV Scanner</span>
-                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Flutter 3.8+</span>
+                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Flutter</span>
                   <span class="badge" style="background-color: #FF8F00; color: #FFFFFF;">Firebase BaaS</span>
                   <span class="badge" style="background-color: #00897B; color: #FFFFFF;">VietQR Payment</span>
                 </div>
@@ -227,61 +233,56 @@
               <a href="https://github.com/huypham200104/DevMind" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="Xem kho mã nguồn DevMind trên GitHub">
                 🐙 GitHub Repo
               </a>
-              <a href="https://drive.google.com/file/d/1m7pVKEESQqtJNayxyOiDgDnJh1Ff2XEq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Xem Video Demo ứng dụng thực tế trên Google Drive">
-                ▶ Video Demo (Drive)
-              </a>
             </div>
           </div>
 
           <p class="home-app-desc">
-            Nền tảng di động luyện thi phỏng vấn kỹ thuật và quét đánh giá CV lập trình viên tự động bằng <strong>AI</strong>, tích hợp mô hình ví tín dụng (Credits) và cổng thanh toán <strong>VietQR</strong> tự động hóa.
+            Nền tảng di động luyện thi trắc nghiệm kỹ thuật và quét đánh giá CV lập trình viên tự động bằng <strong>AI</strong>, tích hợp mô hình ví tín dụng (Credits) và cổng thanh toán <strong>VietQR</strong> tự động hóa.
           </p>
 
           <ul class="wms-feature-list">
             <li class="wms-feature-item">
-              <span class="wms-feature-icon">⏱️</span>
-              <div><strong>Bộ đếm giờ thi 60fps mượt mà:</strong> Cô lập luồng tick thời gian thực bằng <code>ValueNotifier</code> kết hợp <code>ValueListenableBuilder</code>, loại bỏ 100% hiện tượng giật khung hình (Jank) do render lại toàn màn hình mỗi giây.</div>
-            </li>
-            <li class="wms-feature-item">
               <span class="wms-feature-icon">📄</span>
-              <div><strong>Trích xuất PDF trên thiết bị giảm hơn 90% payload:</strong> Xử lý đọc văn bản PDF trực tiếp trên máy bằng <code>syncfusion_flutter_pdf</code> trước khi đẩy lên Firebase Cloud Functions cho AI phân tích CV, tiết kiệm tối đa chi phí đám mây và băng thông mạng.</div>
+              <div><strong>Tự động phân tích và đánh giá CV bằng AI:</strong> Dùng <strong>Firebase Cloud Functions</strong> tích hợp mô hình AI để giải quyết bài toán tự động phân tích CV ứng viên, trích xuất điểm số tổng quan, ma trận điểm mạnh/điểm yếu và gợi ý từ khóa kỹ thuật theo vị trí ứng tuyển.</div>
             </li>
             <li class="wms-feature-item">
-              <span class="wms-feature-icon">🏛️</span>
-              <div><strong>Kiến trúc Feature-First chuẩn SOLID (SRP):</strong> Tách controller nguyên khối thành 3 module độc lập (Catalog, Credits, Session) với lifecycle hook <code>Scoped Provider</code> tự động giải phóng bộ nhớ khi thoát màn hình.</div>
+              <span class="wms-feature-icon">💡</span>
+              <div><strong>Nền tảng thi đấu trắc nghiệm kỹ thuật &amp; Trợ lý AI:</strong> Xây dựng nền tảng thi đấu trắc nghiệm kỹ thuật tương tác hỗ trợ tùy biến tạo bộ đề riêng theo khóa học, kết hợp tích hợp AI trực tiếp giải thích chi tiết cơ chế hoạt động cho từng câu hỏi khó.</div>
             </li>
             <li class="wms-feature-item">
               <span class="wms-feature-icon">💳</span>
-              <div><strong>Ví điểm tín dụng &amp; Thanh toán VietQR động:</strong> Tích hợp mô hình ví điểm tín dụng AI hỗ trợ điểm danh nhận thưởng hàng ngày, đồng thời sinh mã VietQR động với cú pháp định danh đối soát an toàn qua Cloud Functions.</div>
+              <div><strong>Cổng thanh toán tự động &amp; Chống gian lận:</strong> Dùng cổng thanh toán động <strong>VietQR</strong> kết hợp lắng nghe trạng thái giao dịch thời gian thực qua <strong>Firestore</strong> và <strong>Cloud Functions</strong> để giải quyết bài toán tự động nạp tín dụng (AI Credits) và đối soát giao dịch an toàn.</div>
             </li>
           </ul>
 
           <!-- Tech Tags -->
           <div class="tech-tags" style="margin-top: var(--space-md);">
-            <span class="tag">Flutter 3.8+</span>
-            <span class="tag">Dart 3.x</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
             <span class="tag">Firebase Auth &amp; Firestore</span>
             <span class="tag">Cloud Functions</span>
             <span class="tag">Provider State</span>
-            <span class="tag">ValueNotifier</span>
             <span class="tag">syncfusion_flutter_pdf</span>
             <span class="tag">VietQR Gateway</span>
             <span class="tag">GoRouter</span>
           </div>
         </article>
 
-        <!-- APP 4: ỨNG DỤNG QUẢN LÝ KHO (ENTERPRISE - NDA COMPLIANT) -->
-        <article id="app-wms" class="home-app-card reveal">
+        <!-- APP 4: DỰ ÁN DOANH NGHIỆP — CÔNG TY TNHH CÔNG NGHỆ VÀ DỊCH VỤ VPS -->
+        <article id="app-vps-enterprise" class="home-app-card reveal">
           <div class="home-app-header">
             <div class="home-app-identity">
-              <div style="width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, #0288D1, #01579B); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FFFFFF; box-shadow: var(--card-shadow); flex-shrink: 0;">
-                📦
+              <div class="home-app-icon app-icon-squircle" style="background: linear-gradient(135deg, #0288D1, #4527A0);" aria-label="Icon Dự Án Doanh Nghiệp VPS">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
               </div>
               <div class="home-app-info">
-                <h3 class="home-app-title">📦 Ứng Dụng Quản Lý Kho</h3>
+                <h3 class="home-app-title">🏢 Ứng Dụng Quản Lý Kho &amp; Quản Lý Lịch</h3>
                 <div class="home-app-badges">
-                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Dự Án Doanh Nghiệp (VPS)</span>
-                  <span class="badge badge-android">Android PDA</span>
+                  <span class="badge" style="background-color: #0288D1; color: #FFFFFF;">Công nghệ &amp; Dịch vụ VPS</span>
+                  <span class="badge badge-crossplatform">React Native</span>
                   <span class="badge" style="background-color: #455A64; color: #FFFFFF;">Bảo Mật Nội Bộ</span>
                 </div>
               </div>
@@ -293,100 +294,9 @@
             </div>
           </div>
 
-          <p class="home-app-desc">
-            Giải pháp ứng dụng di động tác nghiệp kho bãi dành cho thiết bị cầm tay Android PDA công nghiệp. Hệ thống tập trung tối ưu hóa tốc độ xuất/nhập/kiểm kê hàng hóa, kết nối trực tiếp với súng quét mã Laser vật lý và giải quyết sự cố hiện trường theo thời gian thực.
+          <p class="home-app-desc" style="margin-bottom: 0;">
+            Tôi từng làm 2 app quản lý kho và lịch ở Công ty TNHH Công nghệ và Dịch vụ VPS.
           </p>
-
-          <ul class="wms-feature-list">
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">⚡</span>
-              <div><strong>Quét mã Laser phần cứng siêu tốc:</strong> Tích hợp súng quét Laser Android PDA qua Android Broadcast Intent, giảm hơn <strong>80% thao tác quét thủ công</strong>, xử lý quét liên tục hàng trăm mã vạch pallet không độ trễ.</div>
-            </li>
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">📹</span>
-              <div><strong>Đàm thoại Audio/Video hiện trường:</strong> Tích hợp <strong>LiveKit WebRTC SFU</strong> và SignalR Hub duy trì cuộc gọi đa bên thời gian thực với độ trễ <strong>&lt;500ms</strong>, hỗ trợ nhân viên kho xử lý tức thời các vấn đề pallet lỗi.</div>
-            </li>
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">🏛️</span>
-              <div><strong>Backend Clean Architecture &amp; Auto-Merge:</strong> Xây dựng API Backend .NET 8 theo mô hình Clean Architecture xử lý đường ống tra cứu tập trung và thuật toán dồn pallet tự động; đồng bộ Web điều phối Angular Standalone.</div>
-            </li>
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">🚀</span>
-              <div><strong>Vận hành Zero-Downtime:</strong> Trực tiếp cấu hình và vận hành quy trình phát hành dịch vụ không gián đoạn trên cụm máy chủ <strong>Windows Server / IIS</strong>, bảo vệ an ninh mạng với Tailscale VPN và tường lửa 24/7.</div>
-            </li>
-          </ul>
-
-          <!-- Tech Tags -->
-          <div class="tech-tags" style="margin-top: var(--space-md);">
-            <span class="tag">React Native 0.86</span>
-            <span class="tag">React 19</span>
-            <span class="tag">Android PDA Intent</span>
-            <span class="tag">LiveKit WebRTC SFU</span>
-            <span class="tag">SignalR Hub</span>
-            <span class="tag">.NET 8 Web API</span>
-            <span class="tag">Angular Standalone</span>
-            <span class="tag">Windows Server / IIS</span>
-            <span class="tag">Tailscale VPN</span>
-          </div>
-        </article>
-
-        <!-- APP 5: ỨNG DỤNG QUẢN LÝ LỊCH HỌP (ENTERPRISE - NDA COMPLIANT) -->
-        <article id="app-meeting" class="home-app-card reveal">
-          <div class="home-app-header">
-            <div class="home-app-identity">
-              <div style="width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg, #7B1FA2, #4A148C); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FFFFFF; box-shadow: var(--card-shadow); flex-shrink: 0;">
-                📅
-              </div>
-              <div class="home-app-info">
-                <h3 class="home-app-title">📅 Ứng Dụng Quản Lý Lịch Họp</h3>
-                <div class="home-app-badges">
-                  <span class="badge" style="background-color: #7B1FA2; color: #FFFFFF;">Dự Án Doanh Nghiệp (VPS)</span>
-                  <span class="badge" style="background-color: #2E7D32; color: #FFFFFF;">iOS &amp; Android</span>
-                  <span class="badge" style="background-color: #455A64; color: #FFFFFF;">Bảo Mật Nội Bộ</span>
-                </div>
-              </div>
-            </div>
-            <div class="home-app-actions">
-              <a href="#timeline-section" class="btn btn-outline" title="Xem cột mốc kinh nghiệm tại Công nghệ VPS">
-                Xem Kinh Nghiệm VPS &rarr;
-              </a>
-            </div>
-          </div>
-
-          <p class="home-app-desc">
-            Ứng dụng di động quản lý và điều phối lịch họp số, lịch công tác và phòng họp thông minh dành cho doanh nghiệp. Ứng dụng tập trung vào tính bảo mật dữ liệu cấp cao và tối ưu hóa quy trình đóng gói phân phối tự động.
-          </p>
-
-          <ul class="wms-feature-list">
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">🛡️</span>
-              <div><strong>Xác thực tập trung OAuth 2.0 PKCE SSO:</strong> Triển khai quy trình đăng nhập bảo mật một lần SSO (Single Sign-On) theo chuẩn OAuth 2.0 với luồng Proof Key for Code Exchange (PKCE), đồng bộ quyền hạn người dùng tức thời.</div>
-            </li>
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">🔒</span>
-              <div><strong>Chống rò rỉ tài liệu mật (Anti-Screen Capture):</strong> Tích hợp cơ chế bảo mật hệ thống ngăn chặn hành vi chụp ảnh màn hình (Screenshot Blocking) và quay video màn hình trên cả iOS &amp; Android để bảo vệ an toàn tài liệu họp bí mật.</div>
-            </li>
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">⚡</span>
-              <div><strong>Đồng bộ lịch &amp; Nhắc việc thời gian thực:</strong> Tối ưu luồng dữ liệu thông báo đẩy và đồng bộ trạng thái phòng họp, lịch làm việc đa thiết bị mượt mà không xung đột giờ họp.</div>
-            </li>
-            <li class="wms-feature-item">
-              <span class="wms-feature-icon">🚀</span>
-              <div><strong>CI/CD tự động hóa lên Apple TestFlight:</strong> Thiết lập toàn diện đường ống tự động với <strong>Fastlane + GitHub Actions</strong>, rút ngắn chu kỳ build, ký số và phát hành lên <strong>Apple TestFlight</strong> từ 2 ngày xuống <strong>&lt;20 phút</strong>.</div>
-            </li>
-          </ul>
-
-          <!-- Tech Tags -->
-          <div class="tech-tags" style="margin-top: var(--space-md);">
-            <span class="tag">React Native 0.71</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">OAuth 2.0 PKCE SSO</span>
-            <span class="tag">Screen Capture Protection</span>
-            <span class="tag">Fastlane CI/CD</span>
-            <span class="tag">GitHub Actions</span>
-            <span class="tag">Apple TestFlight</span>
-            <span class="tag">iOS &amp; Android</span>
-          </div>
         </article>
       </section>
 
@@ -443,16 +353,14 @@
                 <h3 class="timeline-title">Phát triển Hệ sinh thái NailMatch &amp; Nền tảng DevMind AI</h3>
               </div>
               <p class="timeline-desc">
-                Nghiên cứu &amp; hoàn thiện 2 giải pháp công nghệ nổi bật: NailMatch (ShopNail) ứng dụng thị giác máy tính AI kết hợp tìm kiếm vector 512 chiều, giải quyết trùng lịch và tối ưu cuộn 120fps; cùng DevMind AI với tính năng chấm điểm CV và bộ đếm giờ luyện thi 60fps.
+                Nghiên cứu &amp; hoàn thiện 2 giải pháp công nghệ: NailMatch ứng dụng thị giác máy tính AI (MediaPipe Hands, pgvector HNSW) kết hợp chống trùng lịch đặt hẹn ở tầng cơ sở dữ liệu; cùng DevMind AI với tính năng chấm điểm CV bằng AI và cổng thanh toán tự động VietQR.
               </p>
               <div class="timeline-project-chips">
                 <a href="#app-nailmatch" class="timeline-chip" title="Xem chi tiết ứng dụng NailMatch">
-                  <img src="assets/nailmatch/logo.png" alt="Logo NailMatch" class="timeline-chip-img">
-                  NailMatch (ShopNail) AI &amp; Booking
+                  <span aria-hidden="true">💅</span> NailMatch AI &amp; Booking
                 </a>
                 <a href="#app-devmind" class="timeline-chip" title="Xem chi tiết ứng dụng DevMind AI">
-                  <img src="assets/devmind/logo_app.jpg" alt="Logo DevMind AI" class="timeline-chip-img">
-                  DevMind AI Quiz &amp; CV Scanner
+                  <span aria-hidden="true">🧠</span> DevMind AI Quiz &amp; CV Scanner
                 </a>
               </div>
             </div>
@@ -483,14 +391,11 @@
                 <h3 class="timeline-title">Thực tập sinh Fullstack — Công nghệ VPS</h3>
               </div>
               <p class="timeline-desc">
-                Tham gia phát triển ứng dụng di động cho thiết bị cầm tay Android PDA tại kho bãi, tích hợp súng quét mã Laser và đàm thoại video WebRTC LiveKit thời gian thực. Trực tiếp vận hành hạ tầng máy chủ Production Windows Server / IIS với quy trình phát hành Zero-Downtime.
+                Từng làm 2 app quản lý kho và lịch ở Công ty TNHH Công nghệ và Dịch vụ VPS.
               </p>
               <div class="timeline-project-chips">
-                <a href="#app-wms" class="timeline-chip" title="Xem giải pháp Ứng dụng Quản lý kho">
-                  <span aria-hidden="true">📦</span> Ứng dụng Quản lý kho (Android PDA)
-                </a>
-                <a href="#app-meeting" class="timeline-chip" title="Xem giải pháp Ứng dụng Quản lý lịch họp">
-                  <span aria-hidden="true">📅</span> Ứng dụng Quản lý lịch họp Doanh nghiệp
+                <a href="#app-vps-enterprise" class="timeline-chip" title="Xem 2 ứng dụng Quản lý kho &amp; Lịch họp (VPS)">
+                  <span aria-hidden="true">🏢</span> 2 App Quản lý kho &amp; Lịch (Công nghệ VPS)
                 </a>
               </div>
             </div>
@@ -510,16 +415,19 @@
           <span class="cv-drive-badge">Curriculum Vitae (PDF)</span>
           <h3 class="cv-drive-title">Phạm Ngọc Huy &bull; Mobile Developer</h3>
           <p class="cv-drive-desc">
-            Kỹ sư Lập trình Di động định hướng T-Shaped với chuyên môn mũi nhọn là Flutter &amp; React Native, kinh nghiệm xây dựng ứng dụng mượt mà 120fps, tích hợp phần cứng Android PDA, đàm thoại video thời gian thực LiveKit WebRTC và vận hành hạ tầng máy chủ Production.
+            Lập trình viên Fullstack với thiên hướng chuyên sâu về làm ứng dụng di động (Flutter &amp; React Native), kết hợp nền tảng backend vững chắc. Tự chủ toàn diện vòng đời sản phẩm từ phát triển, đóng gói đến đưa ứng dụng lên Google Play và cấu hình build Apple TestFlight.
           </p>
 
           <div class="cv-drive-actions">
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-drive-cv btn-drive-cv-vi" data-config="driveCvViUrl" title="Mở file CV Tiếng Việt trên Google Drive">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-drive-cv btn-drive-cv-vi" data-config="driveCvViUrl" title="Mở file CV Tiếng Việt trên Google Drive" style="display: none;">
               📄 Mở CV Tiếng Việt (Google Drive)
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-drive-cv btn-drive-cv-en" data-config="driveCvEnUrl" title="Open English CV on Google Drive">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-drive-cv btn-drive-cv-en" data-config="driveCvEnUrl" title="Open English CV on Google Drive" style="display: none;">
               📄 Open English CV (Google Drive)
             </a>
+            <div id="cv-empty-notice" class="cv-pending-notice" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1rem; border-radius: var(--border-radius-sm); background: var(--bg-secondary); color: var(--text-secondary); font-size: 0.9rem; border: 1px dashed var(--border-color);">
+              ℹ️ Hồ sơ CV đang được cập nhật, vui lòng kết nối qua LinkedIn hoặc GitHub.
+            </div>
             <a href="https://github.com/huypham200104" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-config="githubUrl" title="Xem kho mã nguồn trên GitHub">
               🐙 GitHub Profile
             </a>

@@ -237,21 +237,34 @@
   /* ------------------------------------------------------------------------
    * 5. Configuration Link Binder (Site Config from config.js)
    * ------------------------------------------------------------------------ */
+  function isValidCvUrl(url) {
+    if (!url || typeof url !== 'string') return false;
+    const trimmed = url.trim();
+    return trimmed !== '' && trimmed !== 'https://drive.google.com/' && trimmed !== 'https://drive.google.com';
+  }
+
   function updateCvDriveButton(lang) {
     const config = window.SITE_CONFIG || {};
     const driveCvBtn = document.getElementById('drive-cv-btn');
     if (!driveCvBtn) return;
 
-    if (lang === 'en') {
-      const url = config.driveCvEnUrl || config.driveCvUrl || '';
-      driveCvBtn.setAttribute('href', url.trim() !== '' ? url : '#');
-      driveCvBtn.innerHTML = '📄 View English CV (Drive)';
-      driveCvBtn.setAttribute('title', 'Open English CV on Google Drive');
+    const url = lang === 'en'
+      ? (config.driveCvEnUrl || config.driveCvUrl || '')
+      : (config.driveCvViUrl || config.driveCvUrl || '');
+
+    if (isValidCvUrl(url)) {
+      driveCvBtn.style.display = '';
+      driveCvBtn.setAttribute('href', url.trim());
+      if (lang === 'en') {
+        driveCvBtn.innerHTML = '📄 View English CV (Drive)';
+        driveCvBtn.setAttribute('title', 'Open English CV on Google Drive');
+      } else {
+        driveCvBtn.innerHTML = '📄 Xem CV Tiếng Việt (Drive)';
+        driveCvBtn.setAttribute('title', 'Mở file CV Tiếng Việt trên Google Drive');
+      }
     } else {
-      const url = config.driveCvViUrl || config.driveCvUrl || '';
-      driveCvBtn.setAttribute('href', url.trim() !== '' ? url : '#');
-      driveCvBtn.innerHTML = '📄 Xem CV Tiếng Việt (Drive)';
-      driveCvBtn.setAttribute('title', 'Mở file CV Tiếng Việt trên Google Drive');
+      driveCvBtn.style.display = 'none';
+      driveCvBtn.setAttribute('href', '#');
     }
   }
 
@@ -269,35 +282,39 @@
 
     // Handle Vietnamese CV buttons
     const viButtons = document.querySelectorAll('.btn-drive-cv-vi');
+    const viUrl = config.driveCvViUrl || config.driveCvUrl || '';
+    const hasViUrl = isValidCvUrl(viUrl);
     viButtons.forEach(function (btn) {
-      const viUrl = config.driveCvViUrl || config.driveCvUrl || '';
-      if (viUrl.trim() !== '') {
-        btn.setAttribute('href', viUrl);
+      if (hasViUrl) {
+        btn.setAttribute('href', viUrl.trim());
+        btn.style.display = 'inline-flex';
       } else {
-        btn.addEventListener('click', function (e) {
-          if (!btn.getAttribute('href') || btn.getAttribute('href') === '#') {
-            e.preventDefault();
-            alert('Vui lòng gắn đường link Google Drive CV Tiếng Việt (driveCvViUrl) vào file config.js.');
-          }
-        });
+        btn.style.display = 'none';
       }
     });
 
     // Handle English CV buttons
     const enButtons = document.querySelectorAll('.btn-drive-cv-en');
+    const enUrl = config.driveCvEnUrl || config.driveCvUrl || '';
+    const hasEnUrl = isValidCvUrl(enUrl);
     enButtons.forEach(function (btn) {
-      const enUrl = config.driveCvEnUrl || config.driveCvUrl || '';
-      if (enUrl.trim() !== '') {
-        btn.setAttribute('href', enUrl);
+      if (hasEnUrl) {
+        btn.setAttribute('href', enUrl.trim());
+        btn.style.display = 'inline-flex';
       } else {
-        btn.addEventListener('click', function (e) {
-          if (!btn.getAttribute('href') || btn.getAttribute('href') === '#') {
-            e.preventDefault();
-            alert('Vui lòng gắn đường link Google Drive CV Tiếng Anh (driveCvEnUrl) vào file config.js.');
-          }
-        });
+        btn.style.display = 'none';
       }
     });
+
+    // Dynamic CV empty notice in CV Section
+    const cvNotice = document.getElementById('cv-empty-notice');
+    if (cvNotice) {
+      if (!hasViUrl && !hasEnUrl) {
+        cvNotice.style.display = 'inline-flex';
+      } else {
+        cvNotice.style.display = 'none';
+      }
+    }
 
     // Initialize the dynamic Drive CV button on current active tab (default Vietnamese)
     updateCvDriveButton('vi');

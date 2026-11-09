@@ -895,6 +895,25 @@ a.timeline-chip:hover {
   flex-shrink: 0;
 }
 
+.app-icon-squircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.app-icon-squircle:hover {
+  transform: translateY(-2px);
+}
+
+.app-icon-squircle svg {
+  display: block;
+}
+
 .home-app-info {
   flex: 1;
   min-width: 220px;
