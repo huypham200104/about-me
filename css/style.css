@@ -1448,6 +1448,11 @@ a.timeline-chip:hover {
   .card-grid {
     grid-template-columns: 1fr;
   }
+
+  .phone-gallery-scroll {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-sm);
+  }
 }
 
 /* --------------------------------------------------------------------------
